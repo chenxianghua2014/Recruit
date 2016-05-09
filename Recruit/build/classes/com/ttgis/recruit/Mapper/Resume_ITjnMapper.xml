@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ttgis.recruit.Mapper.Resume_ITjnMapper" >
+ <resultMap id="BaseResultMap" type="com.ttgis.recruit.domain.Resume_ITjn" >
+    <id column="RESUME_ID" property="resumeId" jdbcType="VARCHAR" />
+    <id column="RESUME_ITJNID" property="resumeITjnid" jdbcType="VARCHAR" />
+   	<result column="RESUME_ITJTJN" property="resumeITjtjn" jdbcType="VARCHAR" />
+   	<result column="RESUME_ITSXJN" property="resumeITsxjn" jdbcType="VARCHAR" />
+   	<result column="RESUME_QTJN" property="resumeQtjn" jdbcType="VARCHAR" />
+    <result column="RESUME_ADDTIME" property="resumeAddtime" jdbcType="TIMESTAMP" />
+    <result column="RESUME_DELFLAG" property="resumeDelflag" jdbcType="NUMERIC" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    RESUME_ID,RESUME_ITJNID, RESUME_ITJTJN,RESUME_ITSXJN,RESUME_QTJN,RESUME_ADDTIME, RESUME_DELFLAG
+  </sql>
+<update id="updateByITjnId" parameterType="com.ttgis.recruit.domain.Resume_ITjn" >
+ 	update RESUME_ITJN
+ 	<set>
+ 		<if test="resumeITjtjn !=null">
+ 			RESUME_ITJTJN=#{resumeITjtjn,jdbcType=VARCHAR},
+ 		</if>
+ 		<if test="resumeITsxjn !=null">
+ 			RESUME_ITSXJN=#{resumeITsxjn,jdbcType=VARCHAR},
+ 		</if>
+ 		<if test="resumeQtjn !=null">
+ 			RESUME_QTJN=#{resumeQtjn,jdbcType=VARCHAR},
+ 		</if>
+ 		<if test="resumeAddtime != null" >
+        RESUME_ADDTIME = #{resumeAddtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="resumeDelflag != null" >
+        RESUME_DELFLAG = #{resumeDelflag,jdbcType=NUMERIC},
+      </if>
+ 	</set>
+ 	where RESUME_ITJNID = #{resumeITjnid,jdbcType=VARCHAR}
+ </update>
+ <insert id="ITjninsertSelective" parameterType="com.ttgis.recruit.domain.Resume_ITjn" >
+    insert into RESUME_ITJN
+     <trim prefix="(" suffix=")" suffixOverrides="," >
+     <if test="resumeITjnid != null" >
+        RESUME_ITJNID,
+      </if>
+     <if test="resumeId != null" >
+        RESUME_ID,
+      </if>
+      <if test="resumeITjtjn != null" >
+        RESUME_ITJTJN,
+      </if>
+      <if test="resumeITsxjn != null" >
+        RESUME_ITSXJN,
+      </if>
+      <if test="resumeQtjn != null" >
+        RESUME_QTJN,
+      </if>
+      <if test="resumeAddtime != null" >
+        RESUME_ADDTIME,
+      </if>
+      <if test="resumeDelflag != null" >
+        RESUME_DELFLAG,
+      </if>
+      </trim>
+     <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="resumeITjnid != null" >
+        #{resumeITjnid,jdbcType=VARCHAR},
+      </if>
+      <if test="resumeId != null" >
+        #{resumeId,jdbcType=VARCHAR},
+      </if>
+      <if test="resumeITjtjn != null" >
+        #{resumeITjtjn,jdbcType=VARCHAR},
+      </if>
+      <if test="resumeITsxjn != null" >
+        #{resumeITsxjn,jdbcType=VARCHAR},
+      </if>
+      <if test="resumeQtjn != null" >
+        #{resumeQtjn,jdbcType=VARCHAR},
+      </if>
+      <if test="resumeAddtime != null" >
+        #{resumeAddtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="resumeDelflag != null" >
+        #{resumeDelflag,jdbcType=NUMERIC},
+      </if>
+      </trim>
+  </insert>
+  <select id="getlistResumeITjnByResumeId" resultMap="BaseResultMap" parameterType="java.lang.String">
+		SELECT *
+		FROM RESUME_ITJN
+		WHERE RESUME_ID =#{resumeId,jdbcType=VARCHAR} ORDER BY RESUME_ADDTIME
+  </select>
+  <delete id="deleteByITjnid" parameterType="java.lang.String" >
+    delete from RESUME_ITJN
+    where RESUME_ITJNID = #{resumeITjnid,jdbcType=VARCHAR}
+  </delete>
+</mapper>
