@@ -1,0 +1,639 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ttgis.recruit.Mapper.ZzjgMapper">
+	<resultMap id="BaseResultMap" type="com.ttgis.recruit.domain.Zzjg">
+		<id column="ZZJG_ID" property="zzjgId" jdbcType="VARCHAR" />
+		<result column="ZZJG_DWMC" property="zzjgDwmc" jdbcType="VARCHAR" />
+		<result column="ZZJG_DWDM" property="zzjgDwdm" jdbcType="VARCHAR" />
+		<result column="ZZJG_DWZH" property="zzjgDwzh" jdbcType="VARCHAR" />
+		<result column="ZZJG_DWJC" property="zzjgDwjc" jdbcType="VARCHAR" />
+		<result column="ZZJG_ZHMM" property="zzjgZhmm" jdbcType="VARCHAR" />
+		<result column="ZZJG_SJDW" property="zzjgSjdw" jdbcType="VARCHAR" />
+		<result column="ZZJG_FWQX" property="zzjgFwqx" jdbcType="VARCHAR" />
+		<result column="ZZJG_DWFZR" property="zzjgDwfzr" jdbcType="VARCHAR" />
+		<result column="ZZJG_ZPLXR" property="zzjgZplxr" jdbcType="VARCHAR" />
+		<result column="ZZJG_LXRDH" property="zzjgLxrdh" jdbcType="VARCHAR" />
+		<result column="ZZJG_GZDH" property="zzjgGzdh" jdbcType="VARCHAR" />
+		<result column="ZZJG_LXREMAIL" property="zzjgLxremail"
+			jdbcType="VARCHAR" />
+		<result column="ZZJG_DWJJ" property="zzjgDwjj" jdbcType="VARCHAR" />
+		<result column="ZZJG_ADDTIME" property="zzjgAddtime" jdbcType="TIMESTAMP" />
+		<result column="ZZJG_DELFLAG" property="zzjgDelflag" jdbcType="NUMERIC" />
+		<result column="SFJY" property="sfjy" jdbcType="VARCHAR" />
+		<result column="YJNFY" property="yjnfy" jdbcType="VARCHAR" />
+		<result column="YFFY" property="yffy" jdbcType="VARCHAR" />
+		<result column="CPCS" property="cpcs" jdbcType="VARCHAR" />
+		<result column="ZZJG_EJMM" property="zzjgEjmm" jdbcType="VARCHAR" />
+		<result column="ZZJG_ORDER" property="zzjgOrder" jdbcType="VARCHAR" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		ZZJG_ID, ZZJG_DWMC, ZZJG_DWDM, ZZJG_DWZH, ZZJG_ZHMM,
+		ZZJG_SJDW, ZZJG_FWQX,
+		ZZJG_DWFZR,
+		ZZJG_ZPLXR, ZZJG_LXRDH, ZZJG_LXREMAIL,
+		ZZJG_DWJJ, ZZJG_ADDTIME,
+		ZZJG_DELFLAG,SFJY,YJNFY
+		,YFFY,CPCS,ZZJG_EJMM,ZZJG_DWJC,ZZJG_GZDH,ZZJG_ORDER
+	</sql>
+	<select id="selectByBmglId" resultMap="BaseResultMap"
+		parameterType="java.lang.String">
+		select Z.* from BMGL B
+		left join JTJLK J on J.JTJLK_ID =
+		B.BMGL_JTJLKID
+		left join ZZJG Z on Z.ZZJG_ID = J.ZZJG_ID
+		WHERE B.BMGL_ID
+		= #{bmglId,jdbcType=VARCHAR}
+	</select>
+	<select id="selectAll" resultMap="BaseResultMap" parameterType="java.lang.String">
+		select
+		ZZJG_ID, ZZJG_DWMC, ZZJG_DWDM, ZZJG_DWZH,
+		ZZJG_SJDW, ZZJG_FWQX,
+		ZZJG_DWFZR,
+		ZZJG_ZPLXR, ZZJG_LXRDH, ZZJG_LXREMAIL,
+		ZZJG_DWJJ,
+		ZZJG_ADDTIME,
+		ZZJG_DELFLAG,SFJY,YJNFY
+		,YFFY,CPCS,ZZJG_DWJC,ZZJG_GZDH,ZZJG_ORDER
+		from ZZJG
+		where ZZJG_DELFLAG =
+		1
+	</select>
+	<select id="selectByPrimaryKey" resultMap="BaseResultMap"
+		parameterType="java.lang.String">
+		select
+		ZZJG_ID, ZZJG_DWMC, ZZJG_DWDM, ZZJG_DWZH,
+		ZZJG_SJDW, ZZJG_FWQX,
+		ZZJG_DWFZR,
+		ZZJG_ZPLXR, ZZJG_LXRDH, ZZJG_LXREMAIL,
+		ZZJG_DWJJ, ZZJG_ADDTIME,
+		ZZJG_DELFLAG,SFJY,YJNFY
+		,YFFY,CPCS,ZZJG_DWJC,ZZJG_GZDH,ZZJG_ORDER
+		from ZZJG
+		where ZZJG_ID =
+		#{zzjgId,jdbcType=VARCHAR}
+	</select>
+
+	<select id="selectAllBkdw" resultMap="BaseResultMap"
+		parameterType="map">
+		select * from ZZJG where ZZJG_ID in(select ZZJG_ID
+		from
+		JTJLK
+		where JTJLK_USERID =
+		(select J.JTJLK_USERID
+		from JTJLK J
+		left join
+		BMGL B ON J.JTJLK_ID = B.BMGL_JTJLKID
+		where BMGL_JTJLKID =
+		#{jtjlkId,jdbcType=VARCHAR})
+		and JTJLK_APCPGWLB =
+		#{bkgw,jdbcType=VARCHAR})
+	</select>
+	<!-- 根据上级单位ID查找所有二级单位 -->
+	<select id="selectBySjdw" resultMap="BaseResultMap"
+		parameterType="java.lang.String">
+		select
+		ZZJG_ID, ZZJG_DWMC, ZZJG_DWDM,
+		ZZJG_SJDW,
+		ZZJG_FWQX,
+		ZZJG_DWFZR,
+		ZZJG_ZPLXR, ZZJG_LXRDH, ZZJG_LXREMAIL,
+		ZZJG_DWJJ,
+		ZZJG_ADDTIME,
+		ZZJG_DELFLAG,SFJY,YJNFY
+		,YFFY,CPCS,ZZJG_DWJC,ZZJG_GZDH,ZZJG_ORDER
+		from ZZJG
+		where ZZJG_SJDW =
+		#{sjdw,jdbcType=VARCHAR} AND ZZJG_DELFLAG =
+		1 order by ZZJG_ORDER
+	</select>
+	<select id="selectSanjidw" resultMap="BaseResultMap"
+		parameterType="java.lang.String">
+		select ZZJG_ID, ZZJG_DWMC, ZZJG_SJDW, ZZJG_ORDER
+		from
+		ZZJG
+		where ZZJG_SJDW in (select ZZJG_ID FROM
+		ZZJG WHERE ZZJG_SJDW =
+		'test001') AND ZZJG_DELFLAG =
+		1 order by ZZJG_ORDER
+	</select>
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+		delete from ZZJG
+		where ZZJG_ID = #{zzjgId,jdbcType=VARCHAR}
+	</delete>
+	<insert id="insert" parameterType="com.ttgis.recruit.domain.Zzjg">
+		insert into ZZJG (ZZJG_ID,
+		ZZJG_DWMC, ZZJG_DWDM,
+		ZZJG_DWZH, ZZJG_ZHMM, ZZJG_SJDW,
+		ZZJG_FWQX,
+		ZZJG_DWFZR, ZZJG_ZPLXR,
+		ZZJG_LXRDH, ZZJG_LXREMAIL, ZZJG_DWJJ,
+		ZZJG_ADDTIME, ZZJG_DELFLAG),SFJY,ZZJG_DWJC,ZZJG_GZDH,ZZJG_ORDER
+		values
+		(#{zzjgId,jdbcType=VARCHAR}, #{zzjgDwmc,jdbcType=VARCHAR},
+		#{zzjgDwdm,jdbcType=VARCHAR},
+		#{zzjgDwzh,jdbcType=VARCHAR},
+		#{zzjgZhmm,jdbcType=VARCHAR}, #{zzjgSjdw,jdbcType=VARCHAR},
+		#{zzjgFwqx,jdbcType=VARCHAR}, #{zzjgDwfzr,jdbcType=VARCHAR},
+		#{zzjgZplxr,jdbcType=VARCHAR},
+		#{zzjgLxrdh,jdbcType=VARCHAR},
+		#{zzjgLxremail,jdbcType=VARCHAR}, #{zzjgDwjj,jdbcType=VARCHAR},
+		#{zzjgAddtime,jdbcType=TIMESTAMP},
+		#{zzjgDelflag,jdbcType=NUMERIC},#{sfjy,jdbcType=VARCHAR},
+		#{zzjgDwjc,jdbcType=VARCHAR}, #{zzjgGzdh,jdbcType=VARCHAR},
+		#{zzjgOrder,jdbcType=VARCHAR})
+	</insert>
+	<insert id="insertSelective" parameterType="com.ttgis.recruit.domain.Zzjg">
+		insert into ZZJG
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="zzjgId != null">
+				ZZJG_ID,
+			</if>
+			<if test="zzjgDwmc != null">
+				ZZJG_DWMC,
+			</if>
+			<if test="zzjgDwdm != null">
+				ZZJG_DWDM,
+			</if>
+			<if test="zzjgDwzh != null">
+				ZZJG_DWZH,
+			</if>
+			<if test="zzjgZhmm != null">
+				ZZJG_ZHMM,
+			</if>
+			<if test="zzjgSjdw != null">
+				ZZJG_SJDW,
+			</if>
+			<if test="zzjgFwqx != null">
+				ZZJG_FWQX,
+			</if>
+			<if test="zzjgDwfzr != null">
+				ZZJG_DWFZR,
+			</if>
+			<if test="zzjgZplxr != null">
+				ZZJG_ZPLXR,
+			</if>
+			<if test="zzjgLxrdh != null">
+				ZZJG_LXRDH,
+			</if>
+			<if test="zzjgLxremail != null">
+				ZZJG_LXREMAIL,
+			</if>
+			<if test="zzjgDwjj != null">
+				ZZJG_DWJJ,
+			</if>
+			<if test="zzjgAddtime != null">
+				ZZJG_ADDTIME,
+			</if>
+			<if test="zzjgDelflag != null">
+				ZZJG_DELFLAG,
+			</if>
+			<if test="sfjy != null">
+				SFJY,
+			</if>
+			<if test="zzjgDwjc != null">
+				ZZJG_DWJC,
+			</if>
+			<if test="zzjgGzdh != null">
+				ZZJG_GZDH,
+			</if>
+			<if test="zzjgOrder != null">
+				ZZJG_ORDER,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="zzjgId != null">
+				#{zzjgId,jdbcType=VARCHAR},
+			</if>
+			<if test="zzjgDwmc != null">
+				#{zzjgDwmc,jdbcType=VARCHAR},
+			</if>
+			<if test="zzjgDwdm != null">
+				#{zzjgDwdm,jdbcType=VARCHAR},
+			</if>
+			<if test="zzjgDwzh != null">
+				#{zzjgDwzh,jdbcType=VARCHAR},
+			</if>
+			<if test="zzjgZhmm != null">
+				#{zzjgZhmm,jdbcType=VARCHAR},
+			</if>
+			<if test="zzjgSjdw != null">
+				#{zzjgSjdw,jdbcType=VARCHAR},
+			</if>
+			<if test="zzjgFwqx != null">
+				#{zzjgFwqx,jdbcType=VARCHAR},
+			</if>
+			<if test="zzjgDwfzr != null">
+				#{zzjgDwfzr,jdbcType=VARCHAR},
+			</if>
+			<if test="zzjgZplxr != null">
+				#{zzjgZplxr,jdbcType=VARCHAR},
+			</if>
+			<if test="zzjgLxrdh != null">
+				#{zzjgLxrdh,jdbcType=VARCHAR},
+			</if>
+			<if test="zzjgLxremail != null">
+				#{zzjgLxremail,jdbcType=VARCHAR},
+			</if>
+			<if test="zzjgDwjj != null">
+				#{zzjgDwjj,jdbcType=VARCHAR},
+			</if>
+			<if test="zzjgAddtime != null">
+				#{zzjgAddtime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="zzjgDelflag != null">
+				#{zzjgDelflag,jdbcType=NUMERIC},
+			</if>
+			<if test="sfjy != null">
+				#{sfjy,jdbcType=VARCHAR},
+			</if>
+			<if test="zzjgDwjc != null">
+				#{zzjgDwjc,jdbcType=VARCHAR},
+			</if>
+			<if test="zzjgGzdh != null">
+				#{zzjgGzdh,jdbcType=VARCHAR},
+			</if>
+			<if test="zzjgOrder != null">
+				#{zzjgOrder,jdbcType=VARCHAR},
+			</if>
+		</trim>
+	</insert>
+	<update id="updateByPrimaryKeySelective" parameterType="com.ttgis.recruit.domain.Zzjg">
+		update ZZJG
+		<set>
+			<if test="zzjgDwmc != null">
+				ZZJG_DWMC = #{zzjgDwmc,jdbcType=VARCHAR},
+			</if>
+			<if test="zzjgDwdm != null">
+				ZZJG_DWDM = #{zzjgDwdm,jdbcType=VARCHAR},
+			</if>
+			<if test="zzjgDwzh != null">
+				ZZJG_DWZH = #{zzjgDwzh,jdbcType=VARCHAR},
+			</if>
+			<if test="zzjgZhmm != null">
+				ZZJG_ZHMM = #{zzjgZhmm,jdbcType=VARCHAR},
+			</if>
+			<if test="zzjgSjdw != null">
+				ZZJG_SJDW = #{zzjgSjdw,jdbcType=VARCHAR},
+			</if>
+			<if test="zzjgFwqx != null">
+				ZZJG_FWQX = #{zzjgFwqx,jdbcType=VARCHAR},
+			</if>
+			<if test="zzjgDwfzr != null">
+				ZZJG_DWFZR = #{zzjgDwfzr,jdbcType=VARCHAR},
+			</if>
+			<if test="zzjgZplxr != null">
+				ZZJG_ZPLXR = #{zzjgZplxr,jdbcType=VARCHAR},
+			</if>
+			<if test="zzjgLxrdh != null">
+				ZZJG_LXRDH = #{zzjgLxrdh,jdbcType=VARCHAR},
+			</if>
+			<if test="zzjgLxremail != null">
+				ZZJG_LXREMAIL = #{zzjgLxremail,jdbcType=VARCHAR},
+			</if>
+			<if test="zzjgDwjj != null">
+				ZZJG_DWJJ = #{zzjgDwjj,jdbcType=VARCHAR},
+			</if>
+			<if test="zzjgAddtime != null">
+				ZZJG_ADDTIME = #{zzjgAddtime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="zzjgDelflag != null">
+				ZZJG_DELFLAG = #{zzjgDelflag,jdbcType=NUMERIC},
+			</if>
+			<if test="sfjy != null">
+				SFJY = #{sfjy,jdbcType=NUMERIC},
+			</if>
+			<if test="yjnfy != null">
+				YJNFY = #{yjnfy,jdbcType=VARCHAR},
+			</if>
+			<if test="yffy != null">
+				YFFY = #{yffy,jdbcType=VARCHAR},
+			</if>
+			<if test="cpcs != null">
+				CPCS = #{cpcs,jdbcType=VARCHAR},
+			</if>
+			<if test="zzjgEjmm != null">
+				ZZJG_EJMM = #{zzjgEjmm,jdbcType=VARCHAR},
+			</if>
+			<if test="zzjgDwjc != null">
+				ZZJG_DWJC = #{zzjgDwjc,jdbcType=VARCHAR},
+			</if>
+			<if test="zzjgGzdh != null">
+				ZZJG_GZDH = #{zzjgGzdh,jdbcType=VARCHAR},
+			</if>
+			<if test="zzjgOrder != null">
+				ZZJG_ORDER = #{zzjgOrder,jdbcType=VARCHAR},
+			</if>
+		</set>
+		where ZZJG_ID = #{zzjgId,jdbcType=VARCHAR}
+	</update>
+	<update id="updateByPrimaryKey" parameterType="com.ttgis.recruit.domain.Zzjg">
+		update ZZJG
+		set
+		ZZJG_DWMC = #{zzjgDwmc,jdbcType=VARCHAR},
+		ZZJG_DWDM =
+		#{zzjgDwdm,jdbcType=VARCHAR},
+		ZZJG_DWZH = #{zzjgDwzh,jdbcType=VARCHAR},
+		ZZJG_ZHMM = #{zzjgZhmm,jdbcType=VARCHAR},
+		ZZJG_SJDW =
+		#{zzjgSjdw,jdbcType=VARCHAR},
+		ZZJG_FWQX = #{zzjgFwqx,jdbcType=VARCHAR},
+		ZZJG_DWFZR = #{zzjgDwfzr,jdbcType=VARCHAR},
+		ZZJG_ZPLXR =
+		#{zzjgZplxr,jdbcType=VARCHAR},
+		ZZJG_LXRDH =
+		#{zzjgLxrdh,jdbcType=VARCHAR},
+		ZZJG_GZDH =
+		#{zzjgGzdh,jdbcType=VARCHAR},
+		ZZJG_LXREMAIL =
+		#{zzjgLxremail,jdbcType=VARCHAR},
+		ZZJG_DWJJ =
+		#{zzjgDwjj,jdbcType=VARCHAR},
+		ZZJG_ADDTIME =
+		#{zzjgAddtime,jdbcType=TIMESTAMP},
+		ZZJG_DELFLAG =
+		#{zzjgDelflag,jdbcType=NUMERIC},
+		SFJY = #{sfjy,jdbcType=VARCHAR},
+		ZZJG_DWJC = #{zzjgDwjc,jdbcType=VARCHAR},
+		ZZJG_ORDER =
+		#{zzjgOrder,jdbcType=VARCHAR}
+		where ZZJG_ID =
+		#{zzjgId,jdbcType=VARCHAR}
+	</update>
+
+	<select id="CheckLogin" resultMap="BaseResultMap"
+		parameterType="com.ttgis.recruit.domain.Zzjg">
+		select
+		ZZJG_ID, ZZJG_DWMC, ZZJG_DWDM, ZZJG_DWZH,
+		ZZJG_ZHMM, ZZJG_SJDW, ZZJG_FWQX,
+		ZZJG_DWFZR,
+		ZZJG_ZPLXR, ZZJG_LXRDH,
+		ZZJG_LXREMAIL, ZZJG_DWJJ, ZZJG_ADDTIME,
+		ZZJG_DELFLAG,SFJY,YJNFY
+		,YFFY,CPCS,ZZJG_EJMM,ZZJG_DWJC,ZZJG_GZDH,ZZJG_ORDER
+		from ZZJG
+		where
+		ZZJG_DELFLAG = 1 AND ZZJG_DWZH =
+		#{zzjgDwzh,jdbcType=VARCHAR} AND
+		ZZJG_ZHMM =
+		#{zzjgZhmm,jdbcType=VARCHAR}
+	</select>
+
+	<!-- 查詢二級單位 -->
+	<select id="queryUserFO" resultMap="BaseResultMap">
+		select
+		ZZJG_ID, ZZJG_DWMC,
+		ZZJG_DWDM,
+		ZZJG_SJDW, ZZJG_FWQX,
+		ZZJG_DWFZR,
+		ZZJG_ZPLXR, ZZJG_LXRDH,
+		ZZJG_LXREMAIL,
+		ZZJG_DWJJ, ZZJG_ADDTIME,
+		ZZJG_DELFLAG,SFJY,YJNFY
+		,YFFY,CPCS,ZZJG_DWJC,ZZJG_GZDH,ZZJG_ORDER
+		from ZZJG
+		where ZZJG_SJDW =
+		'test001' AND ZZJG_DELFLAG = 1 order by
+		ZZJG_ADDTIME ASC
+	</select>
+
+	<select id="queryUserSun" resultMap="BaseResultMap">
+		select
+		ZZJG_ID, ZZJG_DWMC,
+		ZZJG_DWDM,
+		ZZJG_SJDW, ZZJG_FWQX,
+		ZZJG_DWFZR,
+		ZZJG_ZPLXR, ZZJG_LXRDH,
+		ZZJG_LXREMAIL,
+		ZZJG_DWJJ, ZZJG_ADDTIME,
+		ZZJG_DELFLAG,SFJY,YJNFY
+		,YFFY,CPCS,ZZJG_DWJC,ZZJG_GZDH,ZZJG_ORDER
+		from ZZJG
+		where ZZJG_SJDW !=
+		'test001' AND ZZJG_DELFLAG = 1 order by
+		ZZJG_ADDTIME ASC
+	</select>
+	<!-- 三级級單位 -->
+	<select id="queryUserSunLevel2" resultMap="BaseResultMap">
+		select
+		ZZJG_ID, ZZJG_DWMC,
+		ZZJG_DWDM,
+		ZZJG_SJDW, ZZJG_FWQX,
+		ZZJG_DWFZR,
+		ZZJG_ZPLXR, ZZJG_LXRDH,
+		ZZJG_LXREMAIL,
+		ZZJG_DWJJ, ZZJG_ADDTIME,
+		ZZJG_DELFLAG,SFJY,YJNFY
+		,YFFY,CPCS,ZZJG_DWJC,ZZJG_GZDH,ZZJG_ORDER
+		from ZZJG
+		where 
+		ZZJG_SJDW !='test001' 
+		AND
+		ZZJG_ID !='test001'
+		AND 
+		ZZJG_DELFLAG = 1 
+		order by
+		ZZJG_ADDTIME ASC
+	</select>
+	
+	<select id="EJqueryUserFO" resultMap="BaseResultMap"
+		parameterType="java.lang.String">
+		select
+		ZZJG_ID, ZZJG_DWMC, ZZJG_DWDM,
+		ZZJG_SJDW,
+		ZZJG_FWQX,
+		ZZJG_DWFZR,
+		ZZJG_ZPLXR, ZZJG_LXRDH, ZZJG_LXREMAIL,
+		ZZJG_DWJJ,
+		ZZJG_ADDTIME,
+		ZZJG_DELFLAG,SFJY,YJNFY
+		,YFFY,CPCS,ZZJG_DWJC,ZZJG_GZDH,ZZJG_ORDER
+		from ZZJG
+		where ZZJG_SJDW =
+		'test001' AND ZZJG_DELFLAG = 1
+		and (ZZJG_ID
+		= #{zzjgId,jdbcType=VARCHAR}
+		or ZZJG_SJDW =
+		#{zzjgId,jdbcType=VARCHAR})
+		order by ZZJG_ADDTIME ASC
+	</select>
+
+	<select id="EJqueryUserSun" resultMap="BaseResultMap"
+		parameterType="java.lang.String">
+		select
+		ZZJG_ID, ZZJG_DWMC, ZZJG_DWDM,
+		ZZJG_SJDW,
+		ZZJG_FWQX,
+		ZZJG_DWFZR,
+		ZZJG_ZPLXR, ZZJG_LXRDH, ZZJG_LXREMAIL,
+		ZZJG_DWJJ,
+		ZZJG_ADDTIME,
+		ZZJG_DELFLAG,SFJY,YJNFY
+		,YFFY,CPCS,ZZJG_DWJC,ZZJG_GZDH,ZZJG_ORDER
+		from ZZJG
+		where ZZJG_SJDW != 'test001' AND ZZJG_DELFLAG = 1
+		and (ZZJG_ID
+		= #{zzjgId,jdbcType=VARCHAR}
+		or ZZJG_SJDW =
+		#{zzjgId,jdbcType=VARCHAR})
+		order by ZZJG_ADDTIME ASC
+	</select>
+	<!-- 二级单位 -->
+	<select id="EJqueryUserSun2Q" resultMap="BaseResultMap"
+		parameterType="java.lang.String">
+		select
+		ZZJG_ID, ZZJG_DWMC
+		from ZZJG
+		where
+		ZZJG_SJDW=#{zzjgId,jdbcType=VARCHAR}
+		AND ZZJG_DELFLAG = 1
+		order by
+		ZZJG_ADDTIME ASC
+	</select>
+	<select id="selectCount" resultType="java.lang.Integer"
+		parameterType="com.ttgis.recruit.domain.QueryJygl">
+		<!-- WARNING - @mbggenerated This element is automatically generated by 
+			MyBatis Generator, do not modify. -->
+		select count(*)
+		from ZZJG
+		where ZZJG_DELFLAG=1 and SFJY = '1'
+		<trim suffixOverrides=",">
+			<if test="zzjgDwmc != null and zzjgDwmc != ''">
+				and ZZJG_DWMC like '%${zzjgDwmc}%'
+			</if>
+			<if test="zzjgDwdm != null and zzjgDwdm != ''">
+				and ZZJG_DWDM like '%${zzjgDwdm}%'
+			</if>
+			<if test="zzjgDwzh != null and zzjgDwzh  != ''">
+				and ZZJG_DWZH like '%${zzjgDwzh}%'
+			</if>
+			<if test="zzjgDwfzr != null and zzjgDwfzr  != ''">
+				and ZZJG_DWFZR like '%${zzjgDwfzr}%'
+			</if>
+		</trim>
+	</select>
+	<select id="selectByWhere" resultMap="BaseResultMap"
+		parameterType="com.ttgis.recruit.domain.QueryJygl">
+		select ZZJG_ID, ZZJG_DWMC, ZZJG_DWDM,
+		ZZJG_SJDW, ZZJG_FWQX,
+		ZZJG_DWFZR,
+		ZZJG_ZPLXR, ZZJG_LXRDH, ZZJG_LXREMAIL,
+		ZZJG_DWJJ, ZZJG_ADDTIME,
+		ZZJG_DELFLAG,SFJY,YJNFY
+		,YFFY,CPCS,ZZJG_DWJC,ZZJG_GZDH,ZZJG_ORDER
+		from
+		(select top ${currentPageSize} *
+		from (select
+		top(${pageNum}*${pageSize}) * from ZZJG T where
+		ZZJG_DELFLAG=1 and SFJY
+		= '1'
+		<trim suffixOverrides=",">
+			<if test="zzjgDwmc != null and zzjgDwmc != ''">
+				and ZZJG_DWMC like '%${zzjgDwmc}%'
+			</if>
+			<if test="zzjgDwdm != null and zzjgDwdm != ''">
+				and ZZJG_DWDM like '%${zzjgDwdm}%'
+			</if>
+			<if test="zzjgDwzh != null and zzjgDwzh  != ''">
+				and ZZJG_DWZH like '%${zzjgDwzh}%'
+			</if>
+			<if test="zzjgDwfzr != null and zzjgDwfzr  != ''">
+				and ZZJG_DWFZR like '%${zzjgDwfzr}%'
+			</if>
+		</trim>
+		order by T.ZZJG_ID desc ) as t1
+		order by ZZJG_ID asc) as t2
+		order by
+		ZZJG_ID desc
+	</select>
+
+	<update id="hfjy" parameterType="java.lang.String">
+		update ZZJG
+		set SFJY = '0'
+		where
+		ZZJG_ID = #{zzjgId,jdbcType=VARCHAR}
+	</update>
+
+	<select id="fhyfySelectCount" resultType="java.lang.Integer"
+		parameterType="com.ttgis.recruit.domain.QueryJygl">
+		select count(*)
+		from ZZJG
+		where ZZJG_DELFLAG=1 and ZZJG_DWDM not in
+		(select MEMBER_IDCARD from member)
+		<trim suffixOverrides=",">
+			<if test="zzjgDwmc != null and zzjgDwmc != ''">
+				and ZZJG_DWMC like '%${zzjgDwmc}%'
+			</if>
+			<if test="zzjgDwdm != null and zzjgDwdm != ''">
+				and ZZJG_DWDM like '%${zzjgDwdm}%'
+			</if>
+			<if test="fyye != null and fyye != ''">
+				and 
+				<![CDATA[
+				(YFFY -(((select top 1 HYCPDJ from HYCPDJ)*1) * (CPCS * 1))) <  ${fyye}
+				]]>
+			</if>
+		</trim>
+	</select>
+	<select id="fhyfySelectByWhere" resultMap="BaseResultMap"
+		parameterType="com.ttgis.recruit.domain.QueryJygl">
+		select ZZJG_ID, ZZJG_DWMC, ZZJG_DWDM, ZZJG_DWZH, ZZJG_SJDW,
+		ZZJG_FWQX,
+		ZZJG_DWFZR,ZZJG_GZDH,ZZJG_ORDER,
+		ZZJG_ZPLXR, ZZJG_LXRDH,
+		ZZJG_LXREMAIL,
+		ZZJG_DWJJ, ZZJG_ADDTIME,
+		ZZJG_DELFLAG,SFJY,YJNFY
+		,YFFY,CPCS,(((select
+		top 1 HYCPDJ from HYCPDJ)*1) * (CPCS * 1)) yfkye,
+		(2000/((select top 1
+		HYCPDJ from HYCPDJ)*1) - CPCS) sycs,
+		(YFFY
+		-(((select top 1 HYCPDJ from
+		HYCPDJ)*1) * (CPCS * 1))) sqfy
+		from
+		(select top ${currentPageSize} *
+		from (select
+		top(${pageNum}*${pageSize}) * from ZZJG T where
+		ZZJG_DELFLAG=1 and
+		ZZJG_DWDM not in (select MEMBER_IDCARD from member)
+		<trim suffixOverrides=",">
+			<if test="zzjgDwmc != null and zzjgDwmc != ''">
+				and ZZJG_DWMC like '%${zzjgDwmc}%'
+			</if>
+			<if test="zzjgDwdm != null and zzjgDwdm != ''">
+				and ZZJG_DWDM like '%${zzjgDwdm}%'
+			</if>
+			<if test="fyye != null and fyye != ''">
+				and 
+				<![CDATA[
+				(YFFY -(((select top 1 HYCPDJ from HYCPDJ)*1) * (CPCS * 1))) <  ${fyye}
+				]]>
+			</if>
+		</trim>
+		order by T.ZZJG_ID ASC ) as t1
+		order by ZZJG_ID desc) as t2
+		order by
+		ZZJG_ID ASC
+	</select>
+
+	<select id="queryFhyfy" resultMap="BaseResultMap">
+		select ZZJG_ID, ZZJG_DWMC,
+		ZZJG_DWDM, ZZJG_DWZH, ZZJG_SJDW,
+		ZZJG_FWQX,
+		ZZJG_DWFZR,ZZJG_GZDH,ZZJG_ORDER,
+		ZZJG_ZPLXR, ZZJG_LXRDH, ZZJG_LXREMAIL,
+		ZZJG_DWJJ, ZZJG_ADDTIME,
+		ZZJG_DELFLAG,SFJY,YJNFY
+		,YFFY,CPCS,(((select
+		top 1 HYCPDJ from HYCPDJ)*1) * (CPCS * 1)) yfkye,
+		(2000/((select top 1
+		HYCPDJ from HYCPDJ)*1) - CPCS) sycs,
+		(YFFY -(((select top 1 HYCPDJ from
+		HYCPDJ)*1) * (CPCS * 1))) sqfy
+		from ZZJG
+		where ZZJG_DELFLAG=1 and
+		ZZJG_DWDM not in (select MEMBER_IDCARD from
+		member)
+
+	</select>
+</mapper>

@@ -1,0 +1,40 @@
+@charset "utf-8";
+/* CSS Document */
+*{ margin:0px; padding:0px;}
+p,ul,li,dl,dd,dt{ margin:0px; padding:0px; display:block;}
+body{ margin:0px; padding:0px; font-family:"宋体"; font-size:12px;}
+#all{ width:100%; margin:0 auto;}
+.editBlock{ height:0px; line-height:50px; float:left;}
+.subtitle{  height:80px; line-height:50px;margin:0 auto; border:1px solid #dcdcdc; margin-top:20px;}
+.subtitle .title,.subtitle_pl .title{ width:100%; height:30px; line-height:30px; background-color:#eeeeee; border-bottom:1px solid #dcdcdc;}
+.dGrid{ width:100%; overflow:hidden; border:1px solid #dcdcdc; margin-top:10px;} 
+.dGrid span{ width:792px; min-height:190px; overflow:hidden; border:4px solid #005bac; position:relative;}
+.data_btn{ width:100%; height:30px; line-height:30px; background-color:#eeeeee;}
+.data_btn .one{ display:block; width:23px; float:right; height:30px; padding:0px;}
+.data_btn .two{ display:block; width:100px; float:right; height:30px; padding:0px;}
+.subtitle_pl{ width:100%; overflow:hidden; margin:0 auto; border:1px solid #dcdcdc; margin-top:20px;}
+.pl{ width:98%; overflow:hidden; margin:0 auto;}
+.comments-item-bd{ width:100%; overflow:hidden; line-height:30px; margin:15px 0px;border-bottom:1px dashed #CCC;}
+.comments-item-bd .name{ line-height:30px; padding-right:10px; overflow:hidden; font-size:14px; font-weight:bold; color:#005bac; float:left; }
+.comments-item-bd .con{ float:left; line-height:30px;}
+.comments-item-bd .del{ width:120px; height:30px; float:right; cursor: pointer;}
+.comments-item-bd .del img{ vertical-align:middle;}
+.comments-item-bd .time{ line-height:20px; font-size:12px; color:#999;}
+.btn a{ line-height:30px; font-size:12px; color:005bac; text-decoration:none;}
+.comments-list{ width:90%; margin:0 auto;}
+.comments-list .del{ cursor: pointer;}
+.huifu{ width:90%; margin:0 auto;}
+.editBlock1 a{background-color:#fff; border:1px solid #ccc; padding:5px; font-size:12px; color:#000; text-decoration: none;}
+img{border:0px;}
+
+
+
+.publish{ width:100%; min-height:190px; overflow:hidden; border:1px solid #eee; position:relative;}
+.pubfb{ width:100%; height:33px; border-top:1px solid #cccccc; background-color:#edf1f4; position:absolute; bottom:4px; z-index:999; text-align:right;}
+.pubright{ text-align:right; font-size:14px; line-height:33px; color:#6d6d6d; padding-right:100px;}
+.pubright span{ font-size:16px; font-weight:bold; color:#0081cc;}
+.pubright a{ display:block; width:90px; height:26px; border:1px solid #d1e4ef; background-color:#0081cc; position:absolute; top:5px; right:2px; text-align:center; line-height:26px; color:#FFF; text-decoration:none;}
+
+
+
+

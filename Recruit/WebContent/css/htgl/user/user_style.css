@@ -1,0 +1,58 @@
+@charset "utf-8";
+/* CSS Document */
+*{ margin:0px; padding:0px;}
+p,ul,li,dl,dd,dt,span{ margin:0px; padding:0px; display:block;}
+body{ margin:0px; padding:0px; font-family:"宋体"; font-size:12px;}
+li{ list-style:none;}
+img{ border:0px; vertical-align:middle;}
+.clear{ zoom:1;}
+.clear:after{ content:""; display:block; clear:both;}
+#all{ width:98%; margin:0 auto;}
+.editBlock{ height:0px; line-height:50px; float:left;}
+.subtitle{  height:80px; line-height:50px;margin:0 auto; border:1px solid #dcdcdc; margin-top:20px;}
+.subtitle .content{ text-align:right;}
+.subtitle .title,.subtitle_pl .title{ width:100%; height:30px; line-height:30px; background-color:#eeeeee; border-bottom:1px solid #dcdcdc;}
+.subtitle_pl .title a{ fontsize:14px; text-decoration: none; padding:0px 10px; line-height:30px; color:#000;}
+.subtitle_pl .title a:hover{ fontsize:14px; text-decoration: none; padding:0px 10px; line-height:30px; color:#005bac;}
+
+.dataGrid{ width:730px; overflow:hidden; border:1px solid #dcdcdc; margin-top:20px;} 
+.dataGrid span{ display:block; width:1500px; overflow:hidden; padding:5px;}
+.data_btn{ width:100%; height:30px; line-height:30px; background-color:#eeeeee;}
+.data_btn .one{ display:block; width:10px; float:right; height:30px; padding:0px;}
+.data_btn .two{ display:block; width:90px; float:right; height:30px; padding:0px;}
+.subtitle_pl{ width:100%; overflow:hidden; margin:0 auto; border:1px solid #dcdcdc; margin-top:20px;}
+.pl{ width:98%; overflow:hidden; margin:0 auto;}
+.comments-item-bd{ width:100%; overflow:hidden; line-height:30px; margin:15px 0px;border-bottom:1px dashed #CCC;}
+.comments-item-bd .name{line-height:30px;overflow:hidden; font-size:14px; color:#999; display:inline;}
+.blog_name{line-height:30px;overflow:hidden; font-size:14px; color:#005bac; display:inline;}
+.comments-item-bd .name .name_n{ display:inline;line-height:30px; padding-right:10px; overflow:hidden; font-size:14px; font-weight:bold; color:#005bac;}
+.comments-item-bd .con{  line-height:30px; padding-left:30px;}
+.comments-item-bd .del{ display:inline;width:20px; height:30px;cursor: pointer; padding-left:5px;}
+.comments-item-bd .del img{ vertical-align:middle;}
+.comments-item-bd .time{ line-height:20px; font-size:12px; color:#999;}
+.btn a{ line-height:30px; font-size:12px; color:005bac; text-decoration:none;}
+.comments-list{ width:90%; margin:0 auto;}
+.comments-list .del{ cursor: pointer;}
+.fenye td span{ float:left;}
+.editBlock a{ padding:5px;  border:1px solid #d9d9d9; background-color:#f0f0f0;}
+.editBlock a{ font-size:12px; text-decoration:none; color:#000;}
+.editBlock a:hover{ color:#00F; background-color:#FFF;}
+.time a{ padding:0px 5px; text-decoration:none; font-size:12px; color:#CCC;}
+.time a:hover{ font-size:12px;color:#005bac;}
+.pl .blog_article{ font-size:14px; color:#999; font-weight:bold; line-height:30px;}
+.pl .blog_writer{ font-size:12px; color:#999;  line-height:25px;}
+.pl .blog_writer span{ font-size:12px; color:#005bac; display:inline-block;}
+.pl .blog_con{overflow:hidden;}
+.pl .blog_con p{ line-height:25px; text-indent:2em; font-size:12px;}
+.pl .blog_comment{ line-height:25px; text-align:right;color:#666; }
+.pl .blog_comment a{font-size:12px; color:#CCC; text-decoration:none;}
+.pl .blog_comment a:hover{font-size:12px; color:#005bac;}
+.blog_con p:first-child{ width:120px; TABLE-LAYOUT: fixed; OVERFLOW: hidden; WHITE-SPACE: nowrap; TEXT-OVERFLOW: ellipsis; empty-cells: show;}
+
+
+
+
+
+
+
+

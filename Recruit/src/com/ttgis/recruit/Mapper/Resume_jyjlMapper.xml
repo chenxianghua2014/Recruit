@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ttgis.recruit.Mapper.Resume_jyjlMapper">
+	<resultMap id="BaseResultMap" type="com.ttgis.recruit.domain.Resume_jyjl">
+		<id column="RESUME_ID" property="resumeId" jdbcType="VARCHAR" />
+		<id column="RESUME_JYJLID" property="resumeJyjlid" jdbcType="VARCHAR" />
+		<result column="RESUME_JDSJ1" property="resumeJdsj1" jdbcType="VARCHAR" />
+		<result column="RESUME_JDSJ" property="resumeJdsj" jdbcType="VARCHAR" />
+		<result column="RESUME_XXMC" property="resumeXxmc" jdbcType="VARCHAR" />
+		<result column="RESUME_ZYL" property="resumeZyl" jdbcType="VARCHAR" />
+		<result column="RESUME_ZY" property="resumeZy" jdbcType="VARCHAR" />
+		<result column="RESUME_XL" property="resumeXl" jdbcType="VARCHAR" />
+		<result column="RESUME_ZYMS" property="resumeZyms" jdbcType="VARCHAR" />
+		<result column="RESUME_YXPM" property="resumeYxpm" jdbcType="VARCHAR" />
+		<result column="RESUME_BJPM" property="resumeBjpm" jdbcType="VARCHAR" />
+		<result column="RESUME_ADDTIME" property="resumeAddtime"
+			jdbcType="TIMESTAMP" />
+		<result column="RESUME_DELFLAG" property="resumeDelflag"
+			jdbcType="NUMERIC" />
+
+	</resultMap>
+	<sql id="Base_Column_List">
+		RESUME_ID, RESUME_JDSJ, RESUME_XXMC, RESUME_JYJLID,
+		RESUME_ZYL, RESUME_ZY, RESUME_XL, RESUME_ZYMS,
+		RESUME_JDSJ1,RESUME_YXPM,RESUME_BJPM,
+		RESUME_ADDTIME,RESUME_DELFLAG
+	</sql>
+	<update id="updateByJyjlId" parameterType="com.ttgis.recruit.domain.Resume_jyjl">
+		update RESUME_JYJL
+		<set>
+			<if test="resumeJdsj !=null">
+				RESUME_JDSJ=#{resumeJdsj,jdbcType=VARCHAR},
+			</if>
+			<if test="resumeJdsj1 !=null">
+				RESUME_JDSJ1=#{resumeJdsj1,jdbcType=VARCHAR},
+			</if>
+			<if test="resumeXxmc !=null">
+				RESUME_XXMC=#{resumeXxmc,jdbcType=VARCHAR},
+			</if>
+			<if test="resumeZyl !=null">
+				RESUME_ZYL=#{resumeZyl,jdbcType=VARCHAR},
+			</if>
+			<if test="resumeZy !=null">
+				RESUME_ZY=#{resumeZy,jdbcType=VARCHAR},
+			</if>
+			<if test="resumeXl !=null">
+				RESUME_XL=#{resumeXl,jdbcType=VARCHAR},
+			</if>
+			<if test="resumeZyms !=null">
+				RESUME_ZYMS=#{resumeZyms,jdbcType=VARCHAR},
+			</if>
+			<if test="resumeYxpm !=null">
+				RESUME_YXPM=#{resumeYxpm,jdbcType=VARCHAR},
+			</if>
+			<if test="resumeBjpm !=null">
+				RESUME_BJPM=#{resumeBjpm,jdbcType=VARCHAR},
+			</if>
+			<if test="resumeAddtime != null">
+				RESUME_ADDTIME = #{resumeAddtime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="resumeDelflag != null">
+				RESUME_DELFLAG = #{resumeDelflag,jdbcType=NUMERIC},
+			</if>
+		</set>
+		where RESUME_JYJLID = #{resumeJyjlid,jdbcType=VARCHAR}
+	</update>
+
+	<insert id="JyjlinsertSelective" parameterType="com.ttgis.recruit.domain.Resume_jyjl">
+		insert into RESUME_JYJL
+		(RESUME_JYJLID,RESUME_ID,RESUME_JDSJ,RESUME_JDSJ1,RESUME_XXMC,
+		RESUME_ZYL,RESUME_ZY, RESUME_XL,
+		RESUME_ZYMS,RESUME_YXPM,RESUME_BJPM,RESUME_ADDTIME,RESUME_DELFLAG)
+		values
+		(#{resumeJyjlid,jdbcType=VARCHAR},#{resumeId,jdbcType=VARCHAR},#{resumeJdsj,jdbcType=VARCHAR},
+		#{resumeJdsj1,jdbcType=VARCHAR},#{resumeXxmc,jdbcType=VARCHAR},#{resumeZyl,jdbcType=VARCHAR},
+		#{resumeZy,jdbcType=VARCHAR},#{resumeXl,jdbcType=VARCHAR},#{resumeZyms,jdbcType=VARCHAR},#{resumeYxpm,jdbcType=VARCHAR},#{resumeBjpm,jdbcType=VARCHAR},#{resumeAddtime,jdbcType=TIMESTAMP},#{resumeDelflag,jdbcType=NUMERIC})
+	</insert>
+	<select id="selectResumeJyjlIdByResumeId" resultMap="BaseResultMap"
+		parameterType="java.lang.String">
+		SELECT *
+		FROM RESUME_JYJL
+		WHERE RESUME_JYJLID
+		=#{resume_Jyjlid,jdbcType=VARCHAR}
+	</select>
+	<select id="getlistResumeJyjlByResumeId" resultMap="BaseResultMap"
+		parameterType="java.lang.String">
+		SELECT *
+		FROM RESUME_JYJL R left join XL X ON X.XL_NAME = R.RESUME_XL 
+		WHERE RESUME_ID
+		=#{resumeId,jdbcType=VARCHAR} ORDER BY RESUME_JDSJ 
+	</select>
+	<delete id="deleteByJyjlid" parameterType="java.lang.String">
+		delete from RESUME_JYJL
+		where RESUME_JYJLID = #{resumeJyjlid,jdbcType=VARCHAR}
+	</delete>
+</mapper>

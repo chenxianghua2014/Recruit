@@ -1,0 +1,251 @@
+@charset "utf-8";
+/* CSS Document */
+body,ul,li,dl,dd,dt,p,h1,h2,h3,h4,h5,h6{ margin:0; padding:0;}
+li{ list-style:none;}
+img{ border:none; vertical-align:middle;}
+body{ font-family:"微软雅黑"; font-size:12px; min-width:980px;}
+.clr{ zoom:1;}
+.clr:after{display:block;clear:both;content:"";}
+/*header部分*/
+#header{ width:980px; height:126px; margin:0 auto;}
+.top{ width:980px; height:85px; position:relative;}
+.loginLink{ /*width:180px;*/ height:30px; position:absolute; top:50px; right:0px;}
+.loginLink a{ font-size:12px; color:#0046ae; text-decoration:none;}
+.nav{ width:980px; height:42px; background:url(../../images/cpgl/navbg.png) repeat-x;}
+.navL{ width:980px; height:42px; background: url(../../images/cpgl/navL.png) no-repeat left top;}
+.navR{ width:980px; height:42px; background: url(../../images/cpgl/navR.png) no-repeat right top;}
+.navR li{ width:108px; height:42px; float:left; background:url(../../images/cpgl/navFG.png) no-repeat right center; line-height:42px; text-align:center;}
+.navR a{font-size:14px;  color:#FFF; text-decoration:none;}
+.navR a img{ vertical-align:top; padding-top:5px;}
+/*banner*/
+#banner{ width:980px; height:400px; margin:0 auto;}
+#full-screen-slider { width:100%; height:400px; float:left; position:relative}
+#slides { display:block; width:100%; height:400px; list-style:none; padding:0; margin:0; position:relative}
+#slides li { display:block; width:100%; height:100%; list-style:none; padding:0; margin:0; position:absolute}
+#slides li a { display:block; width:100%; height:100%; text-indent:-9999px}
+#pagination { display:block; list-style:none; position:absolute; left:50%; top:380px; z-index:9900;  padding:5px 15px 5px 0; margin:0}
+#pagination li { display:block; list-style:none; width:10px; height:10px; float:left; margin-left:15px; border-radius:5px; background:#FFF }
+#pagination li a { display:block; width:100%; height:100%; padding:0; margin:0;  text-indent:-9999px;}
+#pagination li.current { background:#0092CE}
+
+/*模块一*/
+.wrap{ width:980px; overflow:hidden; margin:0 auto; padding-top:20px;}
+
+.login{ width:223px; height:180px; float:left;}
+.loginTop{ width:193px; height:20px;background:url(../../images/cpgl/tag01.png) no-repeat left center; padding-left:30px; padding-top:15px; font-size:14px; color:#0046ae; font-weight:bold;}
+.loginForm{ width:223px; padding-top:10px;}
+.loginForm{font-size:14px; line-height:30px;}
+.loginForm span{ display:block; width:82px; height:24px; background:url(../../images/cpgl/buttonbg.png) no-repeat; float:left; text-align:center; line-height:24px; color:#FFF; cursor:pointer;}
+.loginForm a{ font-size:12px; color:#0046ae; text-decoration:none;}
+
+.information{ width:500px; float:left; margin-left:10px; height:180px;}
+.infTop{ width:470px; height:20px;background:url(../../images/cpgl/tag02.png) no-repeat left center; padding-left:30px; padding-top:15px; font-size:14px; color:#0046ae; font-weight:bold;}
+.infList{ width:490px; padding:5px;}
+.infList ul{ width:450px; padding-left:40px;}
+.infList li{ width:450px; height:30px; line-height:30px; list-style:url(../../images/cpgl/listTag.png); border-bottom:1px dashed #CCCCCC;}
+.infList li a{ font-size:12px; color:#000; text-decoration:none;}
+.infList li a:hover{ font-size:12px; color:#0046ae; text-decoration:underline;}
+.infList span{ float:right; color:#CCC;}
+
+.search{ width:223px; float:left; margin-left:20px; height:180px;}
+.searchTop{ width:193px; height:20px;background:url(../../images/cpgl/tag01.png) no-repeat left center; padding-left:30px; padding-top:15px; font-size:14px; color:#0046ae; font-weight:bold;}
+.seaForm{ width:223px; padding-top:10px;}
+.seaForm td{ text-align:center;}
+
+/*模块二*/
+.LeftBtn{ width:180px; float:left; height:200px;}
+.LeftBtn a{ display:block; width:179px; height:38px; background:url(../../images/cpgl/btnLink.png) no-repeat; text-align:center; font-size:14px; font-weight:bold; color:#FFF; line-height:38px; text-decoration:none; margin:10px 0px;}
+.RightBtn{ width:780px; height:200px; padding:0px 10px; float:left; position:relative;}
+.RightBtnA .RightBtnO .RightBtnI .RightBtnE{ width:213px; height:90px;}
+.RightBtnA{ position:absolute; top:0px; left:40px;}
+.RightBtnO{  position:absolute; top:0px; right:0px;}
+.RightBtnI{  position:absolute; top:110px; left:40px;}
+.RightBtnE{  position:absolute; top:110px; right:0px;}
+.RightBtnC{  position:absolute; top:30px; left:300px;}
+/*模块三*/
+.FriendLinkBtn{ width:980px;}
+.FriendLinkBtn li{ display:block; width:191px; height:50px; float:left; margin:2px;}
+.FriendLInkBtn li img{ width:191px; height:50px;}
+/*友情链接*/
+#FriendLink{ width:980px; height:37px; background:url(../../images/cpgl/friendlinkbg.png) repeat-x; margin:0 auto; margin-top:15px;}
+#FriendLink td{ height:37px; line-height:37px; font-size:14px; font-weight:bold; color:#0046ae;}
+#FriendLink select{ width:180px;}
+/*footer*/
+#footer{ width:980px; text-align:center; margin:0 auto; margin-top:20px; }
+#footer p{ line-height:20px; text-align:center; color:#999;}
+/*县浮*/
+.go{display:none;  z-index:9999; width:177px; overflow:hidden;position:fixed;_position:absolute;bottom:0px; right:0px; left:50%; margin-left:490px;}
+
+										/*其它页模板*/
+#otherbanner{ width:980px; height:153px; margin:0 auto;padding:3px 0px;}
+.menu{ width:150px; overflow:hidden; float:left; background:url(../../images/cpgl/picbg.png) no-repeat center 45px;}
+.menuTop{ width:150px; height:70px;}
+.menu li{ width:150px; height:30px; line-height:30px; text-align:center; border-bottom:1px dashed #CCCCCC;}
+.menu li a{ font-size:14px; font-weight:bold; color:#000; text-decoration:none;}
+.menu li a:hover,.cur a{ color:#0046ae;}
+.content{ width:800px; overflow:hidden; float:left; margin-left:30px;}
+.conTop{ width: 800px; height:38px; background:url(../../images/cpgl/fenge.png) repeat-x left bottom; line-height:30px; font-size:12px; color:#CCC; font-weight:normal;}
+.conTop strong{ font-size:16px; color:#000; font-weight:bold; padding-right:5px;}
+.conTop span{ float:right;}
+.seabtn{ width:800px;height:39px; text-align:center; float:left;}
+.seabtn a{ display:block; width:100px; height:39px; background-color:#0081cc; text-align:center; line-height:39px; text-decoration:none; color:#FFF; margin:0 auto;}
+.result td{ height:30px; line-height:30px; border-bottom:1px dashed #ccc;}
+.result td a{ text-decoration:none; color:#0081cc; padding-left:20px;}
+
+
+									/*校园招聘*/
+/*查询职位*/
+.Possearch{ width:800px; height:150px; padding-top:20px;}
+.seacriteria{ width:200px; height:100px; float:left; font-size:14px;}
+.seacriteria select{ width:170px;}
+.resultTitle{ width:800px; height:40px; line-height:40px; font-size:14px; color:#0081cc; font-weight:bold;}
+.resultTitle img{ vertical-align:middle; margin-right:5px;}
+/*收藏职位*/
+.without{ width:800px; height:100px; text-align:center; line-height:50px; color:#999;}
+.pass{ font-size:14px; font-weight:bold; color:#666;}
+.via{ font-size:14px; font-weight:bold; color:#F00;}
+
+										/*交流社区*/
+/*科工论坛*/
+.jlsqSearch{ width:150px; height:30px; margin-top:30px; background:url(../../images/cpgl/search.png) no-repeat; padding:1px;}
+.jlsqSearch input{ width:110px; height:23px; border:none;}
+.Tab{ width:800px; height:40px; line-height:40px; margin-top:10px;}
+.Tab span{ display:block; width:50px; height:25px; float:left; line-height:25px; font-size:14px;}
+.Tab a{ display:block; width:80px; height:18px; padding:3px; float:left; background-color: #3e90e2; text-align:center; line-height:18px; text-decoration:none; color:#fff; margin:0px 5px; font-size:12px;}
+.Tab a:hover{ background-color:#4ab4ff; color:#e4f4ff; font-size:12px;}
+.title{ width:800px; height:30px; line-height:23px; font-size:14px; font-weight:bold; margin-top:20px; border-bottom:1px dashed #999999; position:relative;}
+.title a{ display:block; width:50px; height:30px; line-height:23px; position:absolute; right:0px; top:5px; font-size:12px; color:#3c92df; text-decoration:none;}
+.bbs{ display:block; width:800px;}
+.bbs li{ display:block; width:240px; height:42px; float:left; margin:5px 10px 10px 0px;}
+.bbsImg{ width:53px; height:41px; float:left;}
+.bbsUpdate{ width:180px; height:41px; float:left; padding-left:6px;}
+.bbstitle{ line-height:20px; color:#3c92df;}
+.bbstitle a { text-decoration: none; color: #0081CC ;}
+.bbstitle a:hover{ color:#8B0000;}
+.bbstime{ line-height:20px; color:#666;}
+.publish{ width:792px; min-height:170px; overflow:hidden; border:1px solid #999; position:relative;}
+.pubfb{ width:792px; height:33px; border-top:1px solid #cccccc; background-color:#edf1f4; position:absolute; bottom:4px; z-index:999;}
+.pubright{ text-align:right; font-size:14px; line-height:33px; color:#6d6d6d; padding-right:100px;}
+.pubright span{ font-size:16px; font-weight:bold; color:#0081cc;}
+.pubright a{ display:block; width:90px; height:26px; border:1px solid #d1e4ef; background-color:#0081cc; position:absolute; top:5px; right:2px; text-align:center; line-height:26px; color:#FFF; text-decoration:none;}
+.forum{ width:800px; overflow:hidden;}
+.forumName{ width:790px; line-height:30px; overflow:hidden; font-size:12px;}
+.forumName span{ font-size:14px; font-weight:bold; color:#0081cc; padding-right:10px;}
+.forunmTime{ width:800px; font-size:12px; color:#ccc;}
+.forunmTime a{ font-size:12px; color:#0081cc; text-decoration:none;}
+.forumHuifu{ width:730px; float:right; margin-top:5px; overflow:hidden; border:1px solid #0081cc; background-color:#f1faff; font-size:12px; line-height:30px; padding:10px;}
+.forumHuifu input{ width:730px; height:25px; line-height:25px;font-size:12px; color:#ccc;}
+.forumHuifu a{ display:block; width:60px; height:20px; line-height:20px; background-color:#0081cc; text-align:center; color:#FFF; font-size:12px; text-decoration:none; float:right; margin-top:5px}
+.forumHuifu span{  font-size:14px; font-weight:bold; color:#0081cc; padding-right:10px;}
+/*个人博客*/
+.bbscontent{ width:800px; overflow:hidden; border-bottom:1px dashed #ccc; font-size:14px; font-weight:bold; line-height:30px;}
+.bbsReply{ width:800px; overflow:hidden;border-bottom:1px dashed #ccc; padding:10px 0px;}
+.bbsReplyTime{ width:800px; float:left; font-size:12px; color:#0081cc; line-height:25px; text-align:left; position: relative;}
+.bbszan{position: absolute; top:0px; right:0px; }
+.bbsReplyTime a{height:25px; float:left; padding:0px 5px; font-size:12px; color:#0081cc; text-decoration: none;}
+.bbsReplyTime a:hover{ color:red;}
+.bssName{ width:800px; height:30px; line-height:30px; font-size:14px; color:#0081cc; text-align:right;}
+.bssName span{ font-size:12px; color:#999; font-weight:normal; padding-left:20px;}
+.reply{ width:750px; overflow:hidden;border-bottom:1px dashed #CCCCCC; padding-left:50px;}
+.replyName{font-size:14px; width:75px; font-weight:bold; color:#000; float:left;}
+.replyCon{  overflow:hidden; color:#000; float:left;}
+.replyTime{ width:740px; float:left; font-size:12px; color:#999; line-height:25px; text-align:right;}
+.fenye{ width:800px; margin-top:20px; text-align:center;}
+
+/*经验博文*/
+.Tabbtn{ width:800px; height:40px;}
+.Tabbtn a{display:block; width:90px; height:26px; border:1px solid #d1e4ef; background-color:#0081cc;  text-align:center; line-height:26px; color:#FFF; text-decoration:none; float:left;}
+.Tabbtn a:hover{ background-color:#0081cc; border-top:2px solid #005bac; border-left:2px solid #005bac; border-right:2px solid #005bac;}
+.Tabbg{ width:798px; height:35px; background:url(../../images/cpgl/tabbg.jpg) repeat-x; border-left:1px solid #005bac; border-right:1px solid #005bac; overflow:hidden;}
+.Tabbg a{ display:block; width:60px; height:30px;padding:0px 10px; line-height:30px; font-size:14px; color:#000; text-decoration:none; float:left; margin:5px 0px 0px 20px}
+.Tabbg a:hover{ background-color:#FFF; border-top:1px solid #005bac; border-left:1px solid #005bac; border-right:1px solid #005bac;}
+.Tabactive{ background-color:#FFF; border-top:1px solid #005bac; border-left:1px solid #005bac; border-right:1px solid #005bac;}
+.article{ width:800px; overflow:hidden; padding:10px 0px; border-bottom:1px dashed #ccc;}
+.artName{ width:798px; height:35px;font-size:14px; font-weight:bold; color:#0081cc; line-height:35px;}
+.artRight{ width:740px; overflow:hidden; padding-left:58px;}
+.artName span{ font-size:14px; color:#000; line-height:35px; padding-left:5px;}
+.artRight span{ font-size:12px; color:#555555; line-height:35px;}
+.artRight p{ font-size:12px; color:#000; line-height:20px; text-indent:2em;}
+.artexamine{ text-align:right; line-height:30px;}
+.artexamine a{ font-size:12px; color:#0081cc; text-decoration:none;}
+.bwtitile{ width:700px; height:50px; line-height:50px; font-size:14px; font-weight:bold; color:#000;}
+.bwtitile input{ width:500px;}
+
+/*经验博文详情*/
+.particulars{ width:800px; overflow:hidden; margin-top:20px;}
+.particulars h3{ font-size:16px; text-align:center; line-height:35px;}
+.particulars h4{ font-size:12px; font-weight:normal; color:#555555; text-align:center; line-height:25px;}
+.particulars h4 a { text-decoration: none; color: #0074D1 ;}
+.particulars h4 a:hover{ color:#00408F;}
+.parlink{ width:800px; height:40px; line-height:40px; text-align:right;}
+.parlink a{ font-size:12px; color:#0081cc; text-decoration:none;}
+.inputButton {
+	background:#0067b6 url(images/button_bg.jpg) repeat-x center;
+	border:1px solid #0067b6;
+	color:#fff;
+	cursor:pointer;
+	overflow:visible;
+	width:auto;
+	padding:4px 10px;
+	vertical-align:middle;
+}
+
+
+
+.Tabsearch{ width:500px; height:40px; text-align:right; float:right;}
+.Tabsearch1 { width:600px; height:40px; text-align:right; float:right;}
+.cpList{ overflow:hidden; margin:0 auto;}
+.cpList th{font-size:14px; height:30px; color: #2B2B2B; text-align: left;width: 100px;}
+.inputReg{width:150px;}
+.warning {font-size:14px; color:red; padding-right:10px;}
+
+
+
+.subtitle_pl{ width:796px; overflow:hidden; border-top:1px solid #ccc; }
+.subtitle_pl td,.subtitle_pl th{ border-bottom:1px solid #ccc; border-left:1px solid #ccc; text-align:center; line-height:30px;}
+.subtitle_pl th{ heigth:40px; line-height:40px; background-color:#f0f0f0;}
+
+
+
+.forumName a{ text-decoration: none; color:#000000;}
+.forumName a:hover{ color:#607B8B ;}
+.artRight a{ text-decoration: none; color:#000000;}
+.artRight a:hover{ color:#607B8B ;}
+.artName a{ text-decoration: none; color:#000000;}
+.artName a:hover{ color:#607B8B ;}
+.artexamine a{ text-decoration: none; color:#0081cc;}
+.artexamine a:hover{ text-decoration: none; color:#F00E1D;}
+.replyCon a{ text-decoration: none; color:#000000;}
+.replyCon a:hover{ color:#0081cc;}
+
+.pinglun{ width:800px; overflow:hidden;}
+.pinglun li{ display:block; width:800px; overflow:hidden; margin-top:20px;}
+.pinglun .plmainLeft,.huifuLeft{font-size:16px; font-weight:bold; color:#0f7989;}
+.pinglun .plmainRight{ width:774px; float:left; border:1px solid #ddecef; border-radius:6px; padding:10px;}
+.pinglun .plmainRightCon{ font-size:14px; line-height:25px;}
+.pinglun .plmainRightP,.huifuRightTime{ font-size:14px; color:#7c8888; position:relative; height:35px; line-height:35px;}
+.pinglun .plmainRightP span{ display:block; width:200px; height:35px; position:absolute; right:0px; top:0px; text-align:right;}
+.pinglun .plmainRightP span a,.huifuRightTime a{ font-size:14px; text-decoration:none; color:#0f7989;}
+.pinglun .plmainRightP span a:hover,.huifuRightTime a:hover{color:#F00;}
+.huifu{ border-top:1px solid #ddecef; padding:10px; overflow:hidden; width:670px; margin-left:80px;}
+.twohuifu{ border-top:1px solid #ddecef; padding:10px; overflow:hidden; width:670px;}
+.huifuRight{width:670px; float:left;font-size:14px; line-height:25px;}
+.twohuifuRight{width:570px; float:left;font-size:14px; line-height:25px;}
+.huifuText{ width:670px; height:30px; border:1px solid #ddecef; line-height:30px;}
+.huifuText a{text-decoration:none; color:#7e8a8c; padding-left:10px;}
+
+.huifupublish{ width:670px; min-height:90px; overflow:hidden; border:1px solid #999; position:relative;}
+.huifupubfb{ width:670px; height:33px; border-top:1px solid #cccccc; background-color:#edf1f4; position:absolute; bottom:4px; z-index:999;}
+.huifupubright{ text-align:right; font-size:14px; line-height:33px; color:#6d6d6d; padding-right:10px; l}
+.huifupubright span{ font-size:16px; font-weight:bold; color:#0081cc;}
+.huifupubright a{ display:block; width:90px; height:26px; border:1px solid #d1e4ef; background-color:#0081cc; position:absolute; top:5px; right:2px; text-align:center; line-height:26px; color:#FFF; text-decoration:none;}
+.inputButton {
+	background: #0067b6 url(images/button_bg.jpg) repeat-x center;
+	border: 1px solid #0067b6;
+	color: #fff;
+	cursor: pointer;
+	overflow: visible;
+	width: auto;
+	padding: 4px 10px;
+	vertical-align: middle;
+}

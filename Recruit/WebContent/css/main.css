@@ -1,0 +1,90 @@
+@charset "utf-8";
+/* CSS Document */
+body,ul,li,dl,dd,dt,p,h1,h2,h3,h4,h5,h6{ margin:0; padding:0;}
+li{ list-style:none;}
+img{ border:none; vertical-align:middle;}
+body{ font-family:"微软雅黑"; font-size:12px; min-width:980px;}
+.clr{ zoom:1;}
+.clr:after{display:block;clear:both;content:"";}
+/*header部分*/
+#header{ width:980px; height:126px; margin:0 auto;}
+.top{ width:980px; height:85px; position:relative;}
+.loginLink{ /*width:180px;*/ height:30px; position:absolute; top:50px; right:0px;}
+.loginLink a{ font-size:12px; color:#0046ae; text-decoration:none;}
+.nav{ width:980px; height:42px; background:url(../images/navbg.png) repeat-x;}
+.navL{ width:980px; height:42px; background: url(../images/navL.png) no-repeat left top;}
+.navR{ width:980px; height:42px; background: url(../images/navR.png) no-repeat right top;}
+.navR li{ width:108px; height:42px; float:left; background:url(../images/navFG.png) no-repeat right center; line-height:42px; text-align:center;}
+.navR a{font-size:14px;  color:#FFF; text-decoration:none;}
+.navR a img{ vertical-align:top; padding-top:5px;}
+/*banner*/
+#otherbanner{ width:980px; height:153px; margin:0 auto;padding:3px 0px;}
+#banner{ width:980px; height:156px; margin:0 auto; padding:3px 0px;}
+#full-screen-slider { width:100%; height:150px; float:left; position:relative}
+#slides { display:block; width:100%; height:150px; list-style:none; padding:0; margin:0; position:relative}
+#slides li { display:block; width:100%; height:100%; list-style:none; padding:0; margin:0; position:absolute}
+#slides li a { display:block; width:100%; height:100%; text-indent:-9999px}
+#pagination { display:block; list-style:none; position:absolute; right:20px; top:125px; z-index:9900;  padding:5px 15px 5px 0; margin:0}
+#pagination li { display:block; list-style:none; width:10px; height:10px; float:left; margin-left:15px; border-radius:5px; background:#FFF }
+#pagination li a { display:block; width:100%; height:100%; padding:0; margin:0;  text-indent:-9999px;}
+#pagination li.current { background:#0092CE}
+
+/*模块一*/
+.wrap{ width:980px; overflow:hidden; margin:0 auto; margin-top:5px;}
+.login{ width:223px; height:200px; }
+.loginTop{ width:193px; height:20px;background:url(../images/tag01.png) no-repeat left center; padding-left:30px; padding-top:15px; font-size:14px; color:#0046ae; font-weight:bold;}
+.loginForm{ width:223px; padding-top:10px;}
+.loginForm{font-size:14px; line-height:30px;}
+.loginForm span{ display:block; width:82px; height:24px; background:url(../images/buttonbg.png) no-repeat; float:left; text-align:center; line-height:24px; color:#FFF; cursor:pointer;}
+.loginForm a{ font-size:12px; color:#0046ae; text-decoration:none;}
+.companyname1 span{ display:block; width:82px; height:24px; background:url(../images/buttonbg.png) no-repeat; float:left; text-align:center; line-height:24px; color:#FFF; cursor:pointer;}
+.information{ width:566px; float:left; margin-left:10px; height:200px;}
+.infTop{ width:525px; height:20px;background:url(../images/tag02.png) no-repeat left center; padding-left:30px; padding-top:15px; font-size:14px; color:#0046ae; font-weight:bold;}
+.infList{ width:545px; padding:5px;}
+.infList ul{ width:505px; padding-left:20px;}
+.infList li{ width:505px; height:30px; line-height:30px; *height:28px; *line-height:28px; list-style:url(../images/listTag.png); border-bottom:1px dashed #CCCCCC; position:relative;}
+.infList li a{ font-size:12px; color:#000; text-decoration:none;}
+.infList li a:hover{ font-size:12px; color:#0046ae; text-decoration:underline;}
+.infList span{ display:block; width:80px; height:25px; line-height:25px; position:absolute; top:0px; right:0px; color:#666;}
+.infMore{width:90px; height:20px;margin-left:442px; padding-top:15px;font-size:14px; color:#0046ae; font-weight:bold;position:absolute;text-align:right;}
+.LeftBtn{ width:180px; float:left; height:200px;text-align: right;}
+.LeftBtn a{ display:block; width:180px; height:38px; background:url(../images/index_btn.jpg) no-repeat center center; text-align:center; font-size:14px; font-weight:bold; color:#FFF; line-height:38px; text-decoration:none; margin:25px 0px;}
+
+
+/*模块二*/
+.companyname{ width:478px; height:305px; float:left;border-bottom:1px solid #CCC;border-left:1px solid #CCC;border-right:1px solid #CCC;}
+.comTitle{ width:469px; height:44px; line-height:44px; background:url(../images/Title_bg.jpg) repeat-x; font-size:14px; color:#0c5bc0; font-weight:bold; padding-left:10px;}
+.comCon{ width:469px; height:260px; border-top:1px dashed #999; margin-left:10px;overflow-y:scroll; overflow-x:hidden;}
+.comCon h3{ font-size:12px; line-height:30px; color:#0c5bc0; font-weight:normal;}
+.comCon ul{ width:455px; overflow:hidden;}
+.comCon li{ float:left; padding:8px;}
+.comCon li a{ font-size:12px; color:#000; text-decoration:none;}
+.companyname1{ width:978px; height:150px; float:left; margin-right:10px; border-bottom:1px solid #CCC;border-left:1px solid #CCC;border-right:1px solid #CCC; margin-top:20px;}
+.comTitle1{ width:970px; height:44px; line-height:44px; background:url(../images/Title_bg.jpg) repeat-x; font-size:14px; color:#0c5bc0; font-weight:bold; padding-left:10px;}
+.search{ width:970px; height:130px; margin-left:10px; border-top:1px dashed #ccc; }
+.jobsea a{text-decoration: none;}
+.companyname1 td{ height:30px; line-height:30px; font-size:14px;}
+
+/*模块三*/
+.FriendLinkBtn{ width:980px;}
+.FriendLinkBtn li{ display:block; width:191px; height:50px; float:left; margin:2px;}
+.FriendLInkBtn li img{ width:191px; height:50px;}
+/*友情链接*/
+#FriendLink{ width:980px; height:37px; background:url(../images/friendlinkbg.png) repeat-x; margin:0 auto; margin-top:5px;}
+#FriendLink td{ height:37px; line-height:37px; font-size:14px; font-weight:bold; color:#0046ae;}
+#FriendLink select{ width:180px;}
+/*footer*/
+#footer{ width:980px; text-align:center; margin:0 auto; margin-top:20px; }
+#footer p{ line-height:20px; text-align:center; color:#999;}
+/*县浮*/
+.go{display:none; z-index:9999; width:177px; overflow:hidden;position:fixed;_position:absolute;bottom:0px; right:0px; left:50%; margin-left:490px;}
+
+.doubar{background-color:#71BAF1; margin: 6px 4px 0px 0px; width:205px; }
+.dou{background-color:white; margin: 6px 4px 0px 0px; width:205px;}
+.list li:hover { background-color:#71BAF1;text-decoration: none;cursor: pointer;}
+.list { line-height: 20px; text-align: left; padding: 4px; font-weight: normal;}
+.menu1 { width: 420px; height: auto; margin: 6px 4px 0px 0px; border: 1px solid #999; padding: 6px 0px 0px 0px; cursor: hand; color: #0c5bc0; overflow-y: hidden; filter: Alpha(opacity = 70); -moz-opacity: 0.7;}
+.menu2 { width: 420px; height: 16px; margin: 6px 4px 0px 0px; border: 1px solid #999; padding: 6px 0px 0px 0px; cursor: hand; color: #0c5bc0; overflow: hidden;}
+.menu1 .Af{ background-color:#71BAF1;text-decoration: none;cursor: pointer;}
+.menu1 .AfNone{ background-color:white;text-decoration: none;cursor: pointer;}
+

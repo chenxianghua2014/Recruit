@@ -1,0 +1,196 @@
+@charset "utf-8";
+/* CSS Document */
+html{overflow-y:scroll}
+body,ul,li,dl,dd,dt,p,h1,h2,h3,h4,h5,h6{ margin:0; padding:0;}
+li{ list-style:none;}
+img{ border:none; vertical-align:middle;}
+body{ font-family:"微软雅黑"; font-size:12px; min-width:980px;}
+.clr{ zoom:1;}
+.clr:after{display:block;clear:both;content:"";}
+/*header部分*/
+#header{ width:980px; height:126px; margin:0 auto;}
+.top{ width:980px; height:85px; position:relative;}
+.loginLink{ /*width:220px; */height:30px; position:absolute; top:50px; right:0px;}
+.loginLink a{ font-size:12px; color:#0046ae; text-decoration:none;}
+.nav{ width:980px; height:42px; background:url(../images/navbg.png) repeat-x;}
+.navL{ width:980px; height:42px; background: url(../images/navL.png) no-repeat left top;}
+.navR{ width:980px; height:42px; background: url(../images/navR.png) no-repeat right top;}
+.navR li{ width:108px; height:42px; float:left; background:url(../images/navFG.png) no-repeat right center; line-height:42px; text-align:center;}
+.navR a{font-size:14px;  color:#FFF; text-decoration:none;}
+.navR a img{ vertical-align:top; padding-top:5px;}
+/*banner*/
+#banner{ width:980px; height:400px; margin:0 auto;}
+#full-screen-slider { width:100%; height:400px; float:left; position:relative}
+#slides { display:block; width:100%; height:400px; list-style:none; padding:0; margin:0; position:relative}
+#slides li { display:block; width:100%; height:100%; list-style:none; padding:0; margin:0; position:absolute}
+#slides li a { display:block; width:100%; height:100%; text-indent:-9999px}
+#pagination { display:block; list-style:none; position:absolute; left:50%; top:380px; z-index:9900;  padding:5px 15px 5px 0; margin:0}
+#pagination li { display:block; list-style:none; width:10px; height:10px; float:left; margin-left:15px; border-radius:5px; background:#FFF }
+#pagination li a { display:block; width:100%; height:100%; padding:0; margin:0;  text-indent:-9999px;}
+#pagination li.current { background:#0092CE}
+
+/*模块一*/
+.wrap{ width:980px; overflow:hidden; margin:0 auto; padding-top:20px;}
+
+.login{ width:223px; height:200px; float:left;}
+.loginTop{ width:193px; height:20px;background:url(../images/tag01.png) no-repeat left center; padding-left:30px; padding-top:15px; font-size:14px; color:#0046ae; font-weight:bold;}
+.loginForm{ width:223px; padding-top:10px;}
+.loginForm{font-size:13px; line-height:28px;}
+.loginForm span{ display:block; width:82px; height:24px; background:url(../images/buttonbg.png) no-repeat; float:left; text-align:center; line-height:24px; color:#FFF; cursor:pointer;}
+.seaForm span{ display:block; width:82px;margin-left:125px; height:24px; background:url(../images/buttonbg.png) no-repeat; text-align:center; line-height:24px; color:#FFF; cursor:pointer;}
+.loginForm a{ font-size:12px; color:#0046ae; text-decoration:none;}
+
+.information{ width:500px; float:left; margin-left:10px; height:200px;}
+.infTop{ width:370px; height:20px;background:url(../images/tag02.png) no-repeat left center; padding-left:30px; padding-top:15px; font-size:14px; color:#0046ae; font-weight:bold;float:left;}
+.infList{ width:490px; padding:5px;}
+.infList ul{ width:450px; padding-left:40px;}
+.infList li{ width:450px; height:30px; line-height:30px; list-style:url(../images/listTag.png); border-bottom:1px dashed #CCCCCC;}
+.infList li a{ font-size:12px; color:#000; text-decoration:none;}
+.infList li a:hover{ font-size:12px; color:#0046ae; text-decoration:underline;}
+.infList span{ float:right; color:#CCC;}
+
+.search{ width:223px; float:left; margin-left:20px; height:200px;}
+.searchTop{ width:193px; height:20px;background:url(../images/tag01.png) no-repeat left center; padding-left:30px; padding-top:15px; font-size:14px; color:#0046ae; font-weight:bold;}
+.seaForm{ width:223px; padding-top:10px;}
+.seaForm td{ text-align:center;}
+
+/*模块二*/
+.LeftBtn{ width:180px; float:left; height:200px;}
+.LeftBtn a{ display:block; width:179px; height:38px; background:url(../images/btnLink.png) no-repeat; text-align:center; font-size:14px; font-weight:bold; color:#FFF; line-height:38px; text-decoration:none; margin:10px 0px;}
+.RightBtn{ width:780px; height:200px; padding:0px 10px; float:left; position:relative;}
+.RightBtnA .RightBtnO .RightBtnI .RightBtnE{ width:213px; height:90px;}
+.RightBtnA{ position:absolute; top:0px; left:40px;}
+.RightBtnO{  position:absolute; top:0px; right:0px;}
+.RightBtnI{  position:absolute; top:110px; left:40px;}
+.RightBtnE{  position:absolute; top:110px; right:0px;}
+.RightBtnC{  position:absolute; top:30px; left:300px;}
+/*模块三*/
+.FriendLinkBtn{ width:980px;}
+.FriendLinkBtn li{ display:block; width:191px; height:50px; float:left; margin:2px;}
+.FriendLInkBtn li img{ width:191px; height:50px;}
+/*友情链接*/
+#FriendLink{ width:980px; height:37px; background:url(../images/friendlinkbg.png) repeat-x; margin:0 auto; margin-top:15px;}
+#FriendLink td{ height:37px; line-height:37px; font-size:14px; font-weight:bold; color:#0046ae;}
+#FriendLink select{ width:180px;}
+/*footer*/
+#footer{ width:980px; text-align:center; margin:0 auto; margin-top:20px; top:350px;}
+#footer p{ line-height:20px; text-align:center; color:#999;}
+/*县浮*/
+.go{display:none; z-index:9999; width:177px; overflow:hidden;position:fixed;_position:absolute;bottom:0px; right:0px; left:50%; margin-left:490px;}
+
+										/*其它页模板*/
+#otherbanner{ width:980px; height:153px; margin:0 auto;padding:3px 0px;}
+.menu{ width:150px; overflow:hidden; float:left; background:url(../images/picbg.png) no-repeat center 45px;}
+.menuTop{ width:150px; height:70px;}
+.menu li{ width:150px; height:30px; line-height:30px; text-align:center; border-bottom:1px dashed #CCCCCC;}
+.menu li a{ font-size:14px; font-weight:bold; color:#000; text-decoration:none;}
+.menu li a:hover,.cur a{ color:#0046ae;}
+.content{ width:800px; overflow:hidden; float:left; margin-left:30px;}
+.conTop{ width: 800px; height:38px; background:url(../images/fenge.png) repeat-x left bottom; line-height:30px; font-size:12px; color:#CCC; font-weight:normal;}
+.conTop strong{ font-size:16px; color:#000; font-weight:bold; padding-right:5px;}
+.conTop span{ float:right;}
+.seabtn{ width:800px;height:39px; text-align:center; float:left;}
+.seabtn a{ display:block; width:100px; height:39px; background-color:#0081cc; text-align:center; line-height:39px; text-decoration:none; color:#FFF; margin:0 auto;}
+.result td{ height:30px; line-height:30px; border-bottom:1px dashed #ccc;}
+.result td a{ text-decoration:none; color:#0081cc;}
+
+
+									/*校园招聘*/
+/*查询职位*/
+.Possearch{ width:800px; height:160px; padding-top:20px;}
+.seacriteria{ width:265px; height:60px; float:left; font-size:14px;}
+.seacriteria select{ width:170px;}
+.resultTitle{ width:800px; height:40px; line-height:40px; font-size:14px; color:#0081cc; font-weight:bold;}
+.resultTitle img{ vertical-align:middle; margin-right:5px;}
+/*收藏职位*/
+.without{ width:800px; height:100px; text-align:center; line-height:50px; color:#999;}
+.pass{ font-size:14px; font-weight:bold; color:#666;}
+.via{ font-size:14px; font-weight:bold; color:#F00;}
+
+										/*交流社区*/
+/*科工论坛*/
+.jlsqSearch{ width:150px; height:30px; margin-top:30px; background:url(../images/search.png) no-repeat; padding:1px;}
+.jlsqSearch input{ width:110px; height:23px; border:none;}
+.Tab{ width:800px; height:40px; line-height:40px; margin-top:10px;}
+.Tab span{ display:block; width:50px; height:25px; float:left; line-height:25px; font-size:14px;}
+.Tab a{ display:block; width:50px; height:18px; padding:3px; border:1px solid #CCC; float:left; background-color:#efefef; text-align:center; line-height:18px; text-decoration:none; color:#000; margin:0px 5px; font-size:12px;}
+.Tab a:hover{ background-color:#FFF; color:#00F;}
+.title{ width:800px; height:30px; line-height:23px; font-size:14px; font-weight:bold; margin-top:20px; border-bottom:1px dashed #999999; position:relative;}
+.title a{ display:block; width:50px; height:30px; line-height:23px; position:absolute; right:0px; top:5px; font-size:12px; color:#3c92df; text-decoration:none;}
+.bbs{ display:block; width:800px;}
+.bbs li{ display:block; width:240px; height:42px; float:left; margin:5px 10px 10px 0px;}
+.bbsImg{ width:53px; height:41px; float:left;}
+.bbsUpdate{ width:180px; height:41px; float:left; padding-left:6px;}
+.bbstitle{ line-height:20px; color:#3c92df;}
+.bbstime{ line-height:20px; color:#666;}
+.publish{ width:792px; height:120px; border:4px solid #005bac; position:relative;}
+.pubfb{ width:792px; height:33px; border-top:1px solid #cccccc; background-color:#edf1f4; position:absolute; bottom:4px;}
+.pubright{ text-align:right; font-size:14px; line-height:33px; color:#6d6d6d; padding-right:100px;}
+.pubright span{ font-size:16px; font-weight:bold; color:#0081cc;}
+.pubright a{ display:block; width:90px; height:26px; border:1px solid #d1e4ef; background-color:#0081cc; position:absolute; top:5px; right:2px; text-align:center; line-height:26px; color:#FFF; text-decoration:none;}
+.forum{ width:800px; overflow:hidden;}
+.forumName{ width:790px; line-height:30px; overflow:hidden; font-size:12px;}
+.forumName span{ font-size:14px; font-weight:bold; color:#0081cc; padding-right:10px;}
+.forunmTime{ width:740px; font-size:12px; color:#ccc; padding-left:60px;}
+.forunmTime a{ font-size:12px; color:#0081cc; text-decoration:none;}
+.forumHuifu{ width:730px; float:right; margin-top:5px; overflow:hidden; border:1px solid #0081cc; background-color:#f1faff; font-size:12px; line-height:30px; padding:10px;}
+.forumHuifu input{ width:730px; height:25px; line-height:25px;font-size:12px; color:#ccc;}
+.forumHuifu a{ display:block; width:60px; height:20px; line-height:20px; background-color:#0081cc; text-align:center; color:#FFF; font-size:12px; text-decoration:none; float:right; margin-top:5px}
+.forumHuifu span{  font-size:14px; font-weight:bold; color:#0081cc; padding-right:10px;}
+/*个人博客*/
+.bbscontent{ width:800px; overflow:hidden; border-bottom:1px dashed #ccc; font-size:14px; font-weight:bold; line-height:30px;}
+.reply{ width:750px; overflow:hidden;border-bottom:1px dashed #CCCCCC; padding-left:50px;}
+.bssName{ width:800px; height:30px; line-height:30px; font-size:14px; color:#0081cc; text-align:right;}
+.bssName span{ font-size:12px; color:#999; font-weight:normal; padding-left:20px;}
+.replyName{ font-size:12px; color:#000; line-height:25px;}
+.replyName span{ font-size:14px; font-weight:bold; color:#0081cc;}
+.replyTime{ font-size:12px; color:#999; line-height:25px;}
+.fenye{ width:800px; margin-top:20px; text-align:center;}
+
+/*经验博文*/
+.Tabbtn{ width:800px; height:50px;}
+.Tabbtn a{display:block; width:90px; height:26px; border:1px solid #d1e4ef; background-color:#0081cc;  text-align:center; line-height:26px; color:#FFF; text-decoration:none;}
+.Tabbg{ width:798px; height:35px; background:url(../images/tabbg.jpg) repeat-x; border-left:1px solid #005bac; border-right:1px solid #005bac; overflow:hidden;}
+.Tabbg a{ display:block; width:60px; height:30px;padding:0px 10px; line-height:30px; font-size:14px; color:#000; text-decoration:none; float:left; margin:5px 0px 0px 20px}
+.Tabbg a:hover{ background-color:#FFF; border-top:1px solid #005bac; border-left:1px solid #005bac; border-right:1px solid #005bac;}
+.Tabactive{ background-color:#FFF; border-top:1px solid #005bac; border-left:1px solid #005bac; border-right:1px solid #005bac;}
+.article{ width:800px; overflow:hidden; padding:10px 0px; border-bottom:1px dashed #ccc;}
+.artName{ width:60px; overflow:hidden; float:left; font-size:14px; font-weight:bold; color:#0081cc; line-height:35px;}
+.artRight{ width:740px; overflow:hidden; float:left;}
+.artRight h3{ font-size:14px; color:#000; line-height:35px;}
+.artRight span{ font-size:12px; color:#ccc; line-height:35px;}
+.artRight p{ font-size:12px; color:#000; line-height:20px; text-indent:2em;}
+.artexamine{ text-align:right; line-height:30px;}
+.artexamine a{ font-size:12px; color:#0081cc; text-decoration:none;}
+/*经验博文详情*/
+.particulars{ width:800px; overflow:hidden; margin-top:20px;}
+.particulars h3{ font-size:16px; text-align:center; line-height:35px;}
+.particulars h4{ font-size:12px; font-weight:normal; color:#ccc; text-align:center; line-height:25px;}
+.particulars p{ font-size:12px; line-height:25px; text-indent:2em;}
+.parlink{ width:800px; height:40px; line-height:40px; text-align:right;}
+.parlink a{ font-size:12px; color:#0081cc; text-decoration:none;}
+
+/*企业文化*/
+.Culturebg{ width:798px; height:37px; background:url(../images/Culturebg.png) repeat-x; border-bottom:1px dashed #CCC; border-left:1px solid #ccc; border-right:1px solid #ccc; margin-top:20px; line-height:36px; font-size:14px; color:#0081cc; font-weight:bold; position:relative;}
+.Culturebg img{ vertical-align:middle; padding:0px 5px 0px 10px;}
+.Culturebg a{ display:block; width:60px; height:36px; line-height:36px; color:#0081cc; font-size:12px; text-decoration:none; position:absolute; top:0px; right:0px; }
+.Culture{ width:798px; overflow:hidden; border-left:1px solid #CCC;border-bottom:1px solid #CCC;border-right:1px solid #CCC;}
+.Culture li{ line-height:30px; padding:0px 10px; position:relative;}
+.Culture li span{ width:80px; height:30px; line-height:30px; position:absolute; top:0px; right:0px;}
+
+/*首页链接的四个单页样式*/
+.wrap01{ width:980px; overflow:hidden; margin:0 auto; }
+.EADSTop{ width:980px; height:50px; line-height:50px; font-size:14px; background:url(../images/fenge.png) repeat-x left bottom;}
+.EADS{ width:980px; text-align:center;}
+.EADS h3{ text-align:center; line-height:35px; font-size:16px;}
+.EADS p{ text-align:left; text-indent:2em; font-size:12px; line-height:30px;}
+.EADS img{ margin:10px 0px;}
+
+
+
+
+/*准考证样式*/
+.zkz{ width:795px; margin:0 auto; margin-top:20px; border-left:1px solid #ccc; border-top:1px solid #ccc;}
+.zkz td{ border-bottom:1px solid #ccc; border-right:1px solid #ccc; text-align:center; height:30px; line-height:30px;}
+.zkz th{ text-align:center; line-height:30px; font-size:14px;  border-bottom:1px solid #ccc; border-right:1px solid #ccc;}
+.zkzbtn{ width:798px;}

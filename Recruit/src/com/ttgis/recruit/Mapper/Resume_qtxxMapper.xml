@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ttgis.recruit.Mapper.Resume_qtxxMapper" >
+<resultMap id="BaseResultMap" type="com.ttgis.recruit.domain.Resume_qtxx" >
+    <id column="RESUME_ID" property="resumeId" jdbcType="VARCHAR" />
+   
+    <id column="RESUME_QTXXID" property="resumeQtxxid" jdbcType="VARCHAR" />
+  
+   
+    <result column="RESUME_QTXXLB1" property="resumeQtxxlb1" jdbcType="VARCHAR" />
+    <result column="RESUME_QTXXLB2" property="resumeQtxxlb2" jdbcType="VARCHAR" />
+    <result column="RESUME_XXMS" property="resumeXxms" jdbcType="VARCHAR" />
+   
+    <result column="RESUME_ADDTIME" property="resumeAddtime" jdbcType="TIMESTAMP" />
+    <result column="RESUME_DELFLAG" property="resumeDelflag" jdbcType="NUMERIC" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    RESUME_ID,RESUME_QTXXID,RESUME_QTXXLB1, RESUME_QTXXLB2, RESUME_XXMS, RESUME_ADDTIME, RESUME_DELFLAG
+  </sql>
+<update id="updateByQtxxId" parameterType="com.ttgis.recruit.domain.Resume_qtxx" >
+ 	update RESUME_QTXX
+ 	<set>
+ 		<if test="resumeQtxxlb1 !=null">
+ 			RESUME_QTXXLB1=#{resumeQtxxlb1,jdbcType=VARCHAR},
+ 		</if>
+ 		<if test="resumeQtxxlb2 !=null">
+ 			RESUME_QTXXLB2=#{resumeQtxxlb2,jdbcType=VARCHAR},
+ 		</if>
+ 		<if test="resumeXxms !=null">
+ 			RESUME_XXMS=#{resumeXxms,jdbcType=VARCHAR},
+ 		</if>
+ 		<if test="resumeAddtime != null" >
+        RESUME_ADDTIME = #{resumeAddtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="resumeDelflag != null" >
+        RESUME_DELFLAG = #{resumeDelflag,jdbcType=NUMERIC},
+      </if>
+ 	</set>
+ 	where RESUME_QTXXID = #{resumeQtxxid,jdbcType=VARCHAR}
+ </update>
+ <insert id="QtxxinsertSelective" parameterType="com.ttgis.recruit.domain.Resume_qtxx" >
+    insert into RESUME_QTXX
+     <trim prefix="(" suffix=")" suffixOverrides="," >
+     <if test="resumeQtxxid != null" >
+        RESUME_QTXXID,
+      </if>
+     <if test="resumeId != null" >
+        RESUME_ID,
+      </if>
+     <if test="resumeQtxxlb1 != null" >
+        RESUME_QTXXLB1,
+      </if>
+      <if test="resumeQtxxlb2 != null" >
+        RESUME_QTXXLB2	,
+      </if>
+      <if test="resumeXxms != null" >
+        RESUME_XXMS,
+      </if>
+      <if test="resumeAddtime != null" >
+        RESUME_ADDTIME,
+      </if>
+      <if test="resumeDelflag != null" >
+        RESUME_DELFLAG,
+      </if>
+      </trim>
+     <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="resumeQtxxid != null" >
+        #{resumeQtxxid,jdbcType=VARCHAR},
+      </if>
+      <if test="resumeId != null" >
+        #{resumeId,jdbcType=VARCHAR},
+      </if>
+      <if test="resumeQtxxlb1 != null" >
+        #{resumeQtxxlb1,jdbcType=VARCHAR},
+      </if>
+      <if test="resumeQtxxlb2 != null" >
+        #{resumeQtxxlb2,jdbcType=VARCHAR},
+      </if>
+      <if test="resumeXxms != null" >
+        #{resumeXxms,jdbcType=VARCHAR},
+      </if>
+      <if test="resumeAddtime != null" >
+        #{resumeAddtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="resumeDelflag != null" >
+        #{resumeDelflag,jdbcType=NUMERIC},
+      </if>
+      </trim>
+  </insert>
+  <select id="getlistResumeQtxxByResumeId" resultMap="BaseResultMap" parameterType="java.lang.String">
+		SELECT *
+		FROM RESUME_QTXX
+		WHERE RESUME_ID =#{resumeId,jdbcType=VARCHAR} ORDER BY RESUME_ADDTIME
+  </select>
+  <delete id="deleteByQtxxid" parameterType="java.lang.String" >
+    delete from RESUME_QTXX
+    where RESUME_QTXXID = #{resumeQtxxid,jdbcType=VARCHAR}
+  </delete>
+</mapper>

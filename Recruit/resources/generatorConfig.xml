@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+	<!-- 指定数据连接驱动jar地址 -->
+	<classPathEntry location="c:/jtds-1.3.1.jar" />
+	<!-- 一个数据库一个context -->
+	<context id="context1">
+		<!-- 注释 -->
+		<commentGenerator>
+			<property name="suppressAllComments" value="false" /><!--是否取消注释 -->
+			<property name="suppressDate" value="true" /><!-- 是否生成注释代时间戳 -->
+		</commentGenerator>
+		<!-- jdbc连接 -->
+		<jdbcConnection driverClass="com.microsoft.sqlserver.jdbc.SQLServerDriver"
+			connectionURL="jdbc:sqlserver://172.16.10.100:1433;databaseName=Recruit"
+			userId="Recruit" password="Recruit" />
+		<!-- 类型转换 -->
+		<javaTypeResolver>
+			<!-- 是否使用bigDecimal， false可自动转化以下类型（Long, Integer, Short, etc.） -->
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+		<!-- 生成实体类地址 -->
+		<javaModelGenerator targetPackage="com.ttgis.recruit.domain"
+			targetProject="Recruit">
+			<!-- 是否在当前路径下新加一层schema,eg：fase路径com.ttgis.recruit.model， true:com.ttgis.recruit.model.[schemaName] -->
+			<property name="enableSubPackages" value="false" />
+			<!-- 是否针对string类型的字段在set的时候进行trim调用 <property name="trimStrings" value="true"/> -->
+		</javaModelGenerator>
+		<!-- 生成mapxml文件 -->
+		<sqlMapGenerator targetPackage="com.ttgis.recruit.Mapper"
+			targetProject="Recruit">
+			<!-- 是否在当前路径下新加一层schema,eg：fase路径com.ttgis.recruit.model， true:com.ttgis.recruit.model.[schemaName] -->
+			<property name="enableSubPackages" value="false" />
+		</sqlMapGenerator>
+		<!-- 生成mapxml对应client，也就是接口dao -->
+		<javaClientGenerator targetPackage="com.ttgis.recruit.Mapper"
+			targetProject="Recruit" type="XMLMAPPER">
+			<!-- 是否在当前路径下新加一层schema,eg：fase路径com.ttgis.recruit.model， true:com.ttgis.recruit.model.[schemaName] -->
+			<property name="enableSubPackages" value="false" />
+		</javaClientGenerator>
+
+		<!--要生成的表: schema即为数据库名 tableName为对应的数据库表 domainObjectName是要生成的实体类 enable*ByExample是否生成 
+			example类 -->
+		<!-- <table tableName="ARTICLE" domainObjectName="Article" enableCountByExample="false" 
+			enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table> -->
+		<!-- <table tableName="BMGL" domainObjectName="Bmgl" enableCountByExample="false" 
+			enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table> -->
+		<!-- <table tableName="COLLECT_POSITION" domainObjectName="Collect_position" 
+			enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" 
+			enableUpdateByExample="false"></table> -->
+		<!-- <table tableName="CPFYGL" domainObjectName="Cpfygl" enableCountByExample="false" 
+			enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table> -->
+		<!-- <table tableName="JTJLK" domainObjectName="Jtjlk" enableCountByExample="false" 
+			enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table> -->
+		<!-- <table tableName="KCGL" domainObjectName="Kcgl" enableCountByExample="false" 
+			enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table> -->
+		<!-- <table tableName="KSXCGL" domainObjectName="Ksxcgl" enableCountByExample="false" 
+			enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table> -->
+		<!-- <table tableName="LTBQ" domainObjectName="Ltbq" enableCountByExample="false" 
+			enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table> -->
+		<!-- <table tableName="MSQGL_DETAILED" domainObjectName="Msqgl_detailed" 
+			enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" 
+			enableUpdateByExample="false"></table> -->
+		<!-- <table tableName="POSITION" domainObjectName="Position" enableCountByExample="false" 
+			enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table> -->
+		<!-- <table tableName="REPLY" domainObjectName="Reply" enableCountByExample="false" 
+			enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table> -->
+		<!-- <table tableName="RESUME" domainObjectName="Resume" enableCountByExample="false" 
+			enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table> -->
+		<!-- <table tableName="SQZT" domainObjectName="Sqzt" enableCountByExample="false" 
+			enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table> -->
+		<!-- <table tableName="TKGL" domainObjectName="Tkgl" enableCountByExample="false" 
+			enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table> -->
+		<!-- <table tableName="USERINFO" domainObjectName="Userinfo" enableCountByExample="false" 
+			enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table> -->
+		<!-- <table tableName="XCXX" domainObjectName="Xcxx" enableCountByExample="false" 
+			enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table> -->
+		<!-- <table tableName="XCXX_ATTACH" domainObjectName="Xcxx_attach" enableCountByExample="false" 
+			enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table> -->
+		<!-- <table tableName="XXTZ" domainObjectName="Xxtz" enableCountByExample="false" 
+			enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table> -->
+		<!-- <table tableName="ZJGZ" domainObjectName="Zjgz" enableCountByExample="false" 
+			enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table> -->
+		<table tableName="ZPXW" domainObjectName="Zpxw"
+			enableCountByExample="false" enableDeleteByExample="false"
+			enableSelectByExample="false" enableUpdateByExample="false"></table>
+		<!-- <table tableName="ZZJG" domainObjectName="Zzjg" enableCountByExample="false" 
+			enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table> -->
+
+	</context>
+</generatorConfiguration>

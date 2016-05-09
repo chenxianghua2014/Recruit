@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ttgis.recruit.Mapper.TkglMapper">
+	<resultMap id="BaseResultMap" type="com.ttgis.recruit.domain.Tkgl">
+		<id column="TKGL_ID" property="tkglId" jdbcType="VARCHAR" />
+		<result column="TKGL_STLX" property="tkglStlx" jdbcType="VARCHAR" />
+		<result column="TKGL_NDDJ" property="tkglNddj" jdbcType="VARCHAR" />
+		<result column="TKGL_STTG" property="tkglSttg" jdbcType="VARCHAR" />
+		<result column="TKGL_STXX_A" property="tkglStxxA" jdbcType="VARCHAR" />
+		<result column="TKGL_STXX_B" property="tkglStxxB" jdbcType="VARCHAR" />
+		<result column="TKGL_STXX_C" property="tkglStxxC" jdbcType="VARCHAR" />
+		<result column="TKGL_STXX_D" property="tkglStxxD" jdbcType="VARCHAR" />
+		<result column="TKGL_STDA" property="tkglStda" jdbcType="VARCHAR" />
+		<result column="TKGL_STBH" property="tkglStbh" jdbcType="VARCHAR" />
+		<result column="TKGL_DAXJ" property="tkglDaxj" jdbcType="VARCHAR" />
+		<result column="TKGL_TSZG" property="tkglTszg" jdbcType="VARCHAR" />
+		<result column="TKGL_ADDTIME" property="tkglAddtime" jdbcType="TIMESTAMP" />
+		<result column="TKGL_DELFLAG" property="tkglDelflag" jdbcType="NUMERIC" />
+	</resultMap>
+	<resultMap type="com.ttgis.recruit.domain.Gxcs" id="BaseResultMap1">
+
+		<id column="GXCS_ID" property="gxcsId" jdbcType="VARCHAR" />
+		<result column="GXCS_WAIXIANG" property="gxcsWaixiang"
+			jdbcType="NUMERIC" />
+		<result column="GXCS_SHIGAN" property="gxcsShigan" jdbcType="NUMERIC" />
+		<result column="GXCS_ZHIJUE" property="gxcsZhijue" jdbcType="NUMERIC" />
+		<result column="GXCS_SIKAO" property="gxcsSikao" jdbcType="NUMERIC" />
+		<result column="GXCS_PANDUAN" property="gxcsPanduan" jdbcType="NUMERIC" />
+		<result column="GXCS_RENZHI" property="gxcsRenzhi" jdbcType="NUMERIC" />
+		<result column="GXCS_NEIXIANG" property="gxcsNeixiang"
+			jdbcType="NUMERIC" />
+		<result column="GXCS_QINGGAN" property="gxcsQinggan" jdbcType="NUMERIC" />
+		<result column="GXCS_CHUANTONGXING" property="gxcsChuantongxing"
+			jdbcType="NUMERIC" />
+		<result column="GXCS_YANJIUXING" property="gxcsYanjiuxing"
+			jdbcType="NUMERIC" />
+		<result column="GXCS_XIANSHIXING" property="gxcsXianshixing"
+			jdbcType="NUMERIC" />
+		<result column="GXCS_YISHUXING" property="gxcsYishuxing"
+			jdbcType="NUMERIC" />
+		<result column="GXCS_QIYEXING" property="gxcsQiyexing"
+			jdbcType="NUMERIC" />
+		<result column="GXCS_SHEHUIXING" property="gxcsShehuixing"
+			jdbcType="NUMERIC" />
+		<result column="GXCS_KSXM" property="gxcsKsxm" jdbcType="VARCHAR" />
+		<result column="GXCS_SFZH" property="gxcsSfzh" jdbcType="VARCHAR" />
+
+	</resultMap>
+	<sql id="Base_Column_List">
+		TKGL_ID, TKGL_STLX, TKGL_NDDJ, TKGL_STTG, TKGL_STXX_A,
+		TKGL_STXX_B,
+		TKGL_STXX_C,
+		TKGL_STXX_D, TKGL_STDA, TKGL_DAXJ, TKGL_TSZG,
+		TKGL_ADDTIME, TKGL_DELFLAG, TKGL_STBH
+	</sql>
+
+	<select id="selectByPrimaryKey" resultMap="BaseResultMap"
+		parameterType="java.lang.String">
+		select
+		<include refid="Base_Column_List" />
+		from TKGL
+		where TKGL_ID = #{tkglId,jdbcType=VARCHAR}
+	</select>
+
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+		delete from TKGL
+		where TKGL_ID = #{tkglId,jdbcType=VARCHAR}
+	</delete>
+
+	<insert id="insert" parameterType="com.ttgis.recruit.domain.Tkgl">
+		insert into TKGL (TKGL_ID,
+		TKGL_STLX, TKGL_NDDJ,
+		TKGL_STTG, TKGL_STXX_A, TKGL_STXX_B,
+		TKGL_STXX_C,
+		TKGL_STXX_D, TKGL_STDA,
+		TKGL_DAXJ, TKGL_TSZG, TKGL_ADDTIME,
+		TKGL_DELFLAG,TKGL_STBH)
+		values (#{tkglId,jdbcType=VARCHAR},
+		#{tkglStlx,jdbcType=VARCHAR},
+		#{tkglNddj,jdbcType=VARCHAR},
+		#{tkglSttg,jdbcType=VARCHAR}, #{tkglStxxA,jdbcType=VARCHAR},
+		#{tkglStxxB,jdbcType=VARCHAR},
+		#{tkglStxxC,jdbcType=VARCHAR},
+		#{tkglStxxD,jdbcType=VARCHAR},
+		#{tkglStda,jdbcType=VARCHAR},
+		#{tkglDaxj,jdbcType=VARCHAR}, #{tkglTszg,jdbcType=VARCHAR},
+		#{tkglAddtime,jdbcType=TIMESTAMP},
+		#{tkglDelflag,jdbcType=NUMERIC},#{tkglStbh,jdbcType=VARCHAR})
+	</insert>
+
+	<insert id="insertSelective" parameterType="com.ttgis.recruit.domain.Tkgl">
+		insert into TKGL
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="tkglId != null">
+				TKGL_ID,
+			</if>
+			<if test="tkglStlx != null">
+				TKGL_STLX,
+			</if>
+			<if test="tkglNddj != null">
+				TKGL_NDDJ,
+			</if>
+			<if test="tkglSttg != null">
+				TKGL_STTG,
+			</if>
+			<if test="tkglStxxA != null">
+				TKGL_STXX_A,
+			</if>
+			<if test="tkglStxxB != null">
+				TKGL_STXX_B,
+			</if>
+			<if test="tkglStxxC != null">
+				TKGL_STXX_C,
+			</if>
+			<if test="tkglStxxD != null">
+				TKGL_STXX_D,
+			</if>
+			<if test="tkglStda != null">
+				TKGL_STDA,
+			</if>
+			<if test="tkglDaxj != null">
+				TKGL_DAXJ,
+			</if>
+			<if test="tkglTszg != null">
+				TKGL_TSZG,
+			</if>
+			<if test="tkglAddtime != null">
+				TKGL_ADDTIME,
+			</if>
+			<if test="tkglDelflag != null">
+				TKGL_DELFLAG,
+			</if>
+			<if test="tkglStbh != null">
+				TKGL_STBH,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="tkglId != null">
+				#{tkglId,jdbcType=VARCHAR},
+			</if>
+			<if test="tkglStlx != null">
+				#{tkglStlx,jdbcType=VARCHAR},
+			</if>
+			<if test="tkglNddj != null">
+				#{tkglNddj,jdbcType=VARCHAR},
+			</if>
+			<if test="tkglSttg != null">
+				#{tkglSttg,jdbcType=VARCHAR},
+			</if>
+			<if test="tkglStxxA != null">
+				#{tkglStxxA,jdbcType=VARCHAR},
+			</if>
+			<if test="tkglStxxB != null">
+				#{tkglStxxB,jdbcType=VARCHAR},
+			</if>
+			<if test="tkglStxxC != null">
+				#{tkglStxxC,jdbcType=VARCHAR},
+			</if>
+			<if test="tkglStxxD != null">
+				#{tkglStxxD,jdbcType=VARCHAR},
+			</if>
+			<if test="tkglStda != null">
+				#{tkglStda,jdbcType=VARCHAR},
+			</if>
+			<if test="tkglDaxj != null">
+				#{tkglDaxj,jdbcType=VARCHAR},
+			</if>
+			<if test="tkglTszg != null">
+				#{tkglTszg,jdbcType=VARCHAR},
+			</if>
+			<if test="tkglAddtime != null">
+				#{tkglAddtime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="tkglDelflag != null">
+				#{tkglDelflag,jdbcType=NUMERIC},
+			</if>
+			<if test="tkglStbh != null">
+				#{tkglStbh,jdbcType=VARCHAR},
+			</if>
+		</trim>
+	</insert>
+
+	<update id="updateByPrimaryKeySelective" parameterType="com.ttgis.recruit.domain.Tkgl">
+		update TKGL
+		<set>
+			<if test="tkglStlx != null">
+				TKGL_STLX = #{tkglStlx,jdbcType=VARCHAR},
+			</if>
+			<if test="tkglNddj != null">
+				TKGL_NDDJ = #{tkglNddj,jdbcType=VARCHAR},
+			</if>
+			<if test="tkglSttg != null">
+				TKGL_STTG = #{tkglSttg,jdbcType=VARCHAR},
+			</if>
+			<if test="tkglStxxA != null">
+				TKGL_STXX_A = #{tkglStxxA,jdbcType=VARCHAR},
+			</if>
+			<if test="tkglStxxB != null">
+				TKGL_STXX_B = #{tkglStxxB,jdbcType=VARCHAR},
+			</if>
+			<if test="tkglStxxC != null">
+				TKGL_STXX_C = #{tkglStxxC,jdbcType=VARCHAR},
+			</if>
+			<if test="tkglStxxD != null">
+				TKGL_STXX_D = #{tkglStxxD,jdbcType=VARCHAR},
+			</if>
+			<if test="tkglStda != null">
+				TKGL_STDA = #{tkglStda,jdbcType=VARCHAR},
+			</if>
+			<if test="tkglDaxj != null">
+				TKGL_DAXJ = #{tkglDaxj,jdbcType=VARCHAR},
+			</if>
+			<if test="tkglTszg != null">
+				TKGL_TSZG = #{tkglTszg,jdbcType=VARCHAR},
+			</if>
+			<if test="tkglAddtime != null">
+				TKGL_ADDTIME = #{tkglAddtime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="tkglDelflag != null">
+				TKGL_DELFLAG = #{tkglDelflag,jdbcType=NUMERIC},
+			</if>
+			<if test="tkglStbh != null">
+				TKGL_STBH = #{tkglStbh,jdbcType=VARCHAR},
+			</if>
+		</set>
+		where TKGL_ID = #{tkglId,jdbcType=VARCHAR}
+	</update>
+
+	<update id="updateByPrimaryKey" parameterType="com.ttgis.recruit.domain.Tkgl">
+		update TKGL
+		set
+		TKGL_STLX = #{tkglStlx,jdbcType=VARCHAR},
+		TKGL_NDDJ =
+		#{tkglNddj,jdbcType=VARCHAR},
+		TKGL_STTG = #{tkglSttg,jdbcType=VARCHAR},
+		TKGL_STXX_A = #{tkglStxxA,jdbcType=VARCHAR},
+		TKGL_STXX_B =
+		#{tkglStxxB,jdbcType=VARCHAR},
+		TKGL_STXX_C =
+		#{tkglStxxC,jdbcType=VARCHAR},
+		TKGL_STXX_D =
+		#{tkglStxxD,jdbcType=VARCHAR},
+		TKGL_STDA =
+		#{tkglStda,jdbcType=VARCHAR},
+		TKGL_DAXJ = #{tkglDaxj,jdbcType=VARCHAR},
+		TKGL_TSZG = #{tkglTszg,jdbcType=VARCHAR},
+		TKGL_ADDTIME =
+		#{tkglAddtime,jdbcType=TIMESTAMP},
+		TKGL_DELFLAG =
+		#{tkglDelflag,jdbcType=NUMERIC},
+		TKGL_STBH =
+		#{tkglStbh,jdbcType=VARCHAR}
+		where TKGL_ID = #{tkglId,jdbcType=VARCHAR}
+	</update>
+
+	<select id="selectCount" resultType="java.lang.Integer"
+		parameterType="com.ttgis.recruit.domain.QueryTkgl">
+		<!-- WARNING - @mbggenerated This element is automatically generated by 
+			MyBatis Generator, do not modify. -->
+		select count(*)
+		from TKGL
+		where TKGL_DELFLAG=1
+		<trim suffixOverrides=",">
+			<if test="tkglStbh != null and tkglStbh != ''">
+				and TKGL_STBH like '%${tkglStbh}%'
+			</if>
+			<if test="tkglStlx != null and tkglStlx != ''">
+				and TKGL_STLX like '%${tkglStlx}%'
+			</if>
+			<if test="tkglSttg != null and tkglSttg != ''">
+				and TKGL_STTG like '%${tkglSttg}%'
+			</if>
+		</trim>
+	</select>
+	<select id="selectCountts" resultType="java.lang.Integer"
+		parameterType="com.ttgis.recruit.domain.QueryTkgl">
+		<!-- WARNING - @mbggenerated This element is automatically generated by 
+			MyBatis Generator, do not modify. -->
+		select count(*)
+		from TKGL
+		where TKGL_DELFLAG=1
+		<trim suffixOverrides=",">
+			<if test="tkglStbh != null and tkglStbh != ''">
+				and TKGL_STBH like '%${tkglStbh}%'
+			</if>
+			<if test="tkglStlx != null and tkglStlx != ''">
+				and TKGL_STLX like '%${tkglStlx}%'
+			</if>
+			<if test="tkglSttg != null and tkglSttg != ''">
+				and TKGL_STTG like '%${tkglSttg}%'
+			</if>
+		</trim>
+	</select>
+	<select id="selectByWhere" resultMap="BaseResultMap"
+		parameterType="com.ttgis.recruit.domain.QueryTkgl">
+		select *
+		from (select top ${currentPageSize} *
+		from (select
+		top(${pageNum}*${pageSize}) * from TKGL T where
+		TKGL_DELFLAG=1
+		<trim suffixOverrides=",">
+			<if test="tkglStbh != null and tkglStbh != ''">
+				and TKGL_STBH like '%${tkglStbh}%'
+			</if>
+			<if test="tkglStlx != null and tkglStlx != ''">
+				and TKGL_STLX like '%${tkglStlx}%'
+			</if>
+			<if test="tkglSttg != null and tkglSttg != ''">
+				and TKGL_STTG like '%${tkglSttg}%'
+			</if>
+		</trim>
+		order by T.TKGL_ID desc ) as t1
+		order by TKGL_ID asc) as t2
+		order by
+		TKGL_ID desc
+	</select>
+	<select id="selectByWherets" resultMap="BaseResultMap"
+		parameterType="com.ttgis.recruit.domain.QueryTkgl">
+		select *
+		from (select top ${currentPageSize} *
+		from (select
+		top(${pageNum}*${pageSize}) * from TKGL T where
+		TKGL_DELFLAG=1
+		<trim suffixOverrides=",">
+			<if test="tkglStbh != null and tkglStbh != ''">
+				and TKGL_STBH like '%${tkglStbh}%'
+			</if>
+			<if test="tkglStlx != null and tkglStlx != ''">
+				and TKGL_STLX like '%${tkglStlx}%'
+			</if>
+			<if test="tkglSttg != null and tkglSttg != ''">
+				and TKGL_STTG like '%${tkglSttg}%'
+			</if>
+		</trim>
+		order by T.TKGL_ID desc ) as t1
+		order by TKGL_ID asc) as t2
+		order by
+		TKGL_ID desc
+	</select>
+	<select id="querySj" resultMap="BaseResultMap" parameterType="map">
+		select top ${ts} * from TKGL where TKGL_STLX =
+		#{tkglNddj,jdbcType=VARCHAR} order by newId()
+
+	</select>
+	<insert id="insertGxcs" parameterType="com.ttgis.recruit.domain.Gxcs">
+		insert into GXCS
+		(GXCS_ID,GXCS_WAIXIANG,GXCS_SHIGAN,GXCS_ZHIJUE,GXCS_SIKAO,GXCS_QINGGAN,GXCS_PANDUAN,GXCS_RENZHI,
+		GXCS_NEIXIANG,GXCS_CHUANTONGXING,GXCS_YANJIUXING,GXCS_XIANSHIXING,GXCS_YISHUXING,GXCS_QIYEXING,
+		GXCS_SHEHUIXING,GXCS_KSXM,GXCS_SFZH)
+		values
+		(#{gxcsId,jdbcType=VARCHAR},#{gxcsWaixiang,jdbcType=VARCHAR},#{gxcsShigan,jdbcType=VARCHAR},
+		#{gxcsZhijue,jdbcType=VARCHAR},#{gxcsSikao,jdbcType=VARCHAR},
+		#{gxcsQinggan,jdbcType=VARCHAR},#{gxcsPanduan,jdbcType=VARCHAR},
+		#{gxcsRenzhi,jdbcType=VARCHAR},#{gxcsNeixiang,jdbcType=VARCHAR},
+		#{gxcsChuantongxing,jdbcType=VARCHAR},#{gxcsYanjiuxing,jdbcType=VARCHAR},
+		#{gxcsXianshixing,jdbcType=VARCHAR},#{gxcsYishuxing,jdbcType=VARCHAR},
+		#{gxcsQiyexing,jdbcType=VARCHAR},#{gxcsShehuixing,jdbcType=VARCHAR},#{gxcsKsxm,jdbcType=VARCHAR},
+		#{gxcsSfzh,jdbcType=VARCHAR})
+	</insert>
+	<select id="queryByGxcsId" resultMap="BaseResultMap1"
+		parameterType="java.lang.String">
+		select top 1 * from GXCS where GXCS_KSXM =
+		#{gxcsKsxm,jdbcType=VARCHAR}
+	</select>
+	<select id="queryBySfzh" resultMap="BaseResultMap1"
+		parameterType="java.lang.String">
+		select * from GXCS where GXCS_SFZH = #{sfzh,jdbcType=VARCHAR}
+	</select>
+	<select id="checkGxcs" parameterType="java.lang.String"
+		resultType="java.lang.Integer">
+		select count(*) from GXCS where GXCS_KSXM =
+		#{gxcsKsxm,jdbcType=VARCHAR}
+	</select>
+	<select id="checkGxcsCount" parameterType="java.lang.String"
+		resultType="java.lang.Integer">
+		select count(*) from GXCS where GXCS_SFZH =
+		#{sfzh,jdbcType=VARCHAR}
+	</select>
+	<delete id="delGxcsByName" parameterType="java.lang.String">
+		delete from GXCS where
+		GXCS_KSXM = #{gxcsKsxm,jdbcType=VARCHAR}
+	</delete>
+</mapper>

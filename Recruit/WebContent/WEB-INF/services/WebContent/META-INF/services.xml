@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<serviceGroup>
+　　　 <service name="accountWService">
+　　　　　　　 <description>访问用户信息</description>
+						<!-- ServiceObjectSupplier为装载spring bean的类获得Spring的ApplicationContext对象，必须有-->
+						<parameter name="ServiceObjectSupplier">
+					        org.apache.axis2.extensions.spring.receivers.SpringAppContextAwareObjectSupplier
+					    </parameter>
+						<!-- SpringBeanName不可变，为spring中对应的bean-->
+　 　　　　　　<parameter name="SpringBeanName">accountWService</parameter>
+						<!-- 方法名 -->
+　　　　　　　 <operation name="getAccount">
+　　　　　　　　　　　 <messageReceiver class="org.apache.axis2.rpc.receivers.RPCMessageReceiver" />
+　　　　　　　 </operation>
+　　　　　　　 <operation name="getPoint">
+　　　　　　　　　　　 <messageReceiver class="org.apache.axis2.rpc.receivers.RPCMessageReceiver" />
+　　　　　　　 </operation>
+　　　 </service>
+</serviceGroup>
