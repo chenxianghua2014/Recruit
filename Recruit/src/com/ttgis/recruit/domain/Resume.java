@@ -28,7 +28,7 @@ public class Resume implements Serializable
 	private String resumeFjid;
 	
 	//添加民族RESUME_ITJTJN、籍贯省份RESUME_HDZS、籍贯城市RESUME_QTZS、健康状况RESUME_ITSXJN
-	//入党时间RESUME_QTJN 参加工作时间RESUME_CJGZSJ、拟应聘工作岗位1 RESUME_NYPGW1拟应聘工作岗位RESUME_NYPGW2
+	//入党时间RESUME_QTJN 参加工作时间RESUME_CJGZSJ、拟应聘工作岗位1 RESUME_NYPGW1拟应聘工作岗位2RESUME_NYPGW2
 	private String resumeItjtjn;
 	private String resumeHdzs;
 	private String resumeQtzs;

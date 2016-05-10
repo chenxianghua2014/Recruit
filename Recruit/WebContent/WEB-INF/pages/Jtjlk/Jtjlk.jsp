@@ -97,8 +97,8 @@ body {
 				<a href="#">管理系统首页</a> | <a href="http://www.casic.com.cn">集团公司首页</a>
 			</p>
 			<p>
-				<a title="查看用户基本信息" href="reviewZzjg" target="mainFrame"> <img src="images/admin.png" /> </a>
-				您好！
+				<a title="查看用户基本信息" href="reviewZzjg" target="mainFrame"> <img src="images/admin.png" />
+				</a> 您好！
 				<span style="color: black; size: 4em;">
 					<%
 						Object o = session.getAttribute("loginType");
@@ -220,10 +220,14 @@ body {
 							<option value="医护类">医护类</option>
 							<option value="教育培训类">教育培训类</option>
 							<option value="服务保障类">服务保障类</option>
-					</select>&nbsp; 户口地:--%>
+					</select>--%>&nbsp; 户口地:
 						<input name="jtjlkHkd" type="text" class="inputText" id="jtjlkHkd" />
 						&nbsp;
+						<input  id="jtjlkIds" name="jtjlkIds" type="hidden"/>
 						<input name="button" type="button" onclick="loadData();" class="inputButton" value="查询" />
+						<input name="button" type="button" onclick="loadDataExp('录用');" class="inputButton"
+							value="批量导出" />
+
 					</td>
 				</tr>
 			</tbody>
@@ -234,7 +238,7 @@ body {
 			<caption>集团简历库查询结果</caption>
 			<thead>
 				<tr>
-					<th width="1%"> </th>
+					<th width="30"><input id="checkAll" type="checkbox" /></th>
 					<th width="3%">姓名</th>
 					<th width="5%">应聘岗位1</th>
 					<th width="5%">应聘岗位2</th>
@@ -252,7 +256,7 @@ body {
 					<th width="5%">联系电话</th>
 					<th width="5%">户口地</th>
 					<th width="5%" class="alignCenter">简历详情</th>
-					<%--					<th width="60" class="alignCenter">收藏</th>--%>
+					<%-- <th width="60" class="alignCenter">收藏</th>--%>
 					<!-- <th width="60" class="alignCenter">删除</th> -->
 				</tr>
 			</thead>

@@ -483,8 +483,8 @@ public class MainController
 		jtjlk.setJtjlkZw(resume.getResumeNypgw2());    //岗位名称改为拟应聘岗位2
 		
 		
-		jtjlk.setJtjlkJlzt(resume_Gzjl.getResumeGzcs());  //职务
-		//jtjlk.setJtjlkCpjg("未测评"); //改为外语种类
+		jtjlk.setJtjlkJlzt(resume_Gzjl.getResumeGzcs());  //简历状态改为职务
+		//jtjlk.setJtjlkCpjg("未测评"); //面试结果改为外语种类
 		jtjlk.setJtjlkCpjg(Yynl.get(0).getResumeYylb()); 
 		
 		//jtjlk.setJtjlkMszt("未安排面试");//改为联系电话
