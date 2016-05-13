@@ -67,58 +67,57 @@ body {
 					<table>
 						<tr>
 							<td>用户名：</td>
-							<td><input type="text" name="loginName" id="loginName"
-								class="loginLength"  placeholder="登录名/手机号/身份证号" /></td>
+							<td>
+								<input type="text" name="loginName" id="loginName" class="loginLength" placeholder="登录名/手机号/身份证号" />
+							</td>
 						</tr>
 						<tr>
 							<td>密 &nbsp;&nbsp;码：</td>
-							<td><input type="password" name="userPassword"
-								id="userPassword" class="loginLength" /></td>
+							<td>
+								<input type="password" name="userPassword" id="userPassword" class="loginLength" />
+							</td>
 						</tr>
 						<tr>
 							<td colspan="2" style="font-size: 14px;color: red;" id="result">${result.message}</td>
 						</tr>
 						<tr>
-							<td colspan="2"><a href="javascript:void(0);" onclick="Login();"><span>登录</span>
-							</a> <a href="register" target="parent"><span
-									style="margin-left:40px;">注册 </span> </a>
+							<td colspan="2">
+								<a href="javascript:void(0);" onclick="Login();"><span>登录</span> </a> <a href="register" target="parent"><span style="margin-left:40px;">注册
+									</span> </a>
 							</td>
 						</tr>
 						<tr>
-							<td colspan="2"><a href="javascript:void(0);"
-								onclick="window.parent.location ='/Recruit/htRecruit';">单位用户登录</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-								<a href="javascript:void(0);" onclick="zhmm()">找回密码</a></td>
+							<td colspan="2">
+								<a href="javascript:void(0);" onclick="window.parent.location ='/Recruit/htRecruit';">单位用户登录</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="javascript:void(0);" onclick="zhmm()">找回密码</a>
+							</td>
 						</tr>
 					</table>
 				</c:when>
 				<c:otherwise>
-					<input type="hidden" name="userIdcard"
-						value="${userLoginSession.userIdcard}" />
-					<input type="hidden" name="userPassword"
-						value="${userLoginSession.userPassword}" />
+					<input type="hidden" name="userIdcard" value="${userLoginSession.userIdcard}" />
+					<input type="hidden" name="userPassword" value="${userLoginSession.userPassword}" />
 					<div class="loginForm">
 						<table width="100%">
 							<tr>
-								<td style=" text-align: left;">用户名：</u></td>
-								<td style=" text-align: left;">${userLoginSession.userIdcard}
+								<td style=" text-align: left;">
+									用户名：</u>
 								</td>
+								<td style=" text-align: left;">${userLoginSession.userIdcard}</td>
 							</tr>
 							<tr>
 								<td style=" text-align: left;">姓&nbsp;&nbsp;&nbsp;名：</td>
-								<td style=" text-align: left;">${userLoginSession.userName}
-								</td>
+								<td style=" text-align: left;">${userLoginSession.userName}</td>
 							</tr>
 							<tr>
-								<td colspan="2"><a href="javascript:void(0);"
-									onclick="userUpd('${userLoginSession.userId}')"><span>账号管理</span>
-								</a> <%--<a href="javascript:void(0);"
+								<td colspan="2">
+									<a href="javascript:void(0);" onclick="userUpd('${userLoginSession.userId}')"><span>账号管理</span> </a>
+									<%--<a href="javascript:void(0);"
 									onclick="window.parent.location ='Message';"><span
 										style="margin-left:40px;">消息中心</span> </a>
 								--%>
-								<a href="javascript:void(0);"
-									onclick="window.parent.location ='MyRecruit';"><span
-										style="margin-left:40px;">我的求职</span> </a></td>
+									<a href="javascript:void(0);" onclick="window.parent.location ='MyRecruit';"><span style="margin-left:40px;">我的求职</span> </a>
+								</td>
 							</tr>
 						</table>
 					</div>

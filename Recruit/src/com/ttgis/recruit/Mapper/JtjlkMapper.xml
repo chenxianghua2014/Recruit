@@ -719,12 +719,12 @@
 		R.RESUME_XL where R.RESUME_ID = JTJLK_USERID
 		order by
 		X.XL_ORDER desc) JTJLK_ZY,
-		(select top 1 RESUME_XL
+		<!-- (select top 1 RESUME_XL
 		from RESUME_JYJL R
 		left join XL X on X.XL_NAME =
 		R.RESUME_XL where R.RESUME_ID =
 		JTJLK_USERID
-		order by X.XL_ORDER desc)JTJLK_XL, JTJLK_ZW,
+		order by X.XL_ORDER desc) -->JTJLK_XL, JTJLK_ZW,
 		JTJLK_JLZT,
 		JTJLK_MSZT,
 		JTJLK_CPJG, JTJLK_ADDTIME,

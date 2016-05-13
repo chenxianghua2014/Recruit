@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -8,13 +7,10 @@
 <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link type="text/css" href="css/main.css" rel="stylesheet" />
-<link type="text/css" href="resources/jBox/Skins/Blue/jbox.css"
-	rel="stylesheet"></link>
-<script type="text/javascript"
-	src="resources/jquery/jquery-1.9.1.min.js"></script>
+<link type="text/css" href="resources/jBox/Skins/Blue/jbox.css" rel="stylesheet"></link>
+<script type="text/javascript" src="resources/jquery/jquery-1.9.1.min.js"></script>
 <script src="resources/jquery/jquery-migrate-1.1.1.js"></script>
-<script type="text/javascript"
-	src="resources/jBox/jquery.jBox-2.3.min.js"></script>
+<script type="text/javascript" src="resources/jBox/jquery.jBox-2.3.min.js"></script>
 <script type="text/javascript" src="resources/jBox/jquery.jBox-zh-CN.js"></script>
 <script type="text/javascript" src="resources/jquery/jquery.form.js"></script>
 <script type="text/javascript" src="js/Main.js"></script>
@@ -27,8 +23,7 @@
 			<div class="loginLine">
 				<img src="images/line01.png" />
 			</div>
-			<iframe src="LoginFrmFirst" id="LoginFrmFirst" name="LoginFrmFirst"
-				width="100%" height="200" frameborder="0" allowtransparency="true"></iframe>
+			<iframe src="LoginFrmFirst" id="LoginFrmFirst" name="LoginFrmFirst" width="100%" height="200" frameborder="0" allowtransparency="true"></iframe>
 		</div>
 		<%--<div class="information">
 			<div class="infMore">
@@ -65,7 +60,8 @@
 				onclick="javascript:window.location='MyApplication'">网上测评预约</a> <a
 				href="javascript:void(0);">网上测评</a>
 		</div>
-	--%></div>
+	--%>
+	</div>
 	<%--<div class="wrap clr">
 		<div class="companyname" style="margin-right:20px;">
 			<div class="comTitle">
@@ -232,19 +228,22 @@
 			</div>
 		</div>
 	</div>
-	--%><div id="FriendLink">
+	--%>
+	<div id="FriendLink">
 		<table>
 			<tr align="center">
 				<td align="left">&nbsp;&nbsp;友情链接：</td>
-				<td><select style="width:440px;" name="csic1" id="csic1"
-					onchange="if(this.selectedIndex!=0)window.open(this.options[this.selectedIndex].value,'','')">
+				<td>
+					<select style="width:440px;" name="csic1" id="csic1"
+						onchange="if(this.selectedIndex!=0)window.open(this.options[this.selectedIndex].value,'','')">
 						<option>中国航天科工网站群</option>
-				</select>
+					</select>
 				</td>
-				<td><select style="width:440px;" name="csic2" id="csic2"
-					onchange="if(this.selectedIndex!=0)window.open(this.options[this.selectedIndex].value,'','')">
+				<td>
+					<select style="width:440px;" name="csic2" id="csic2"
+						onchange="if(this.selectedIndex!=0)window.open(this.options[this.selectedIndex].value,'','')">
 						<option>军工集团</option>
-				</select>
+					</select>
 				</td>
 			</tr>
 		</table>

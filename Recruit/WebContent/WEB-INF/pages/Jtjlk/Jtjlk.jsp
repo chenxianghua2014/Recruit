@@ -101,16 +101,16 @@ body {
 				</a> 您好！
 				<span style="color: black; size: 4em;">
 					<%
-						Object o = session.getAttribute("loginType");
-						if (o == null) {
+					    Object o = session.getAttribute("loginType");
+								if (o == null) {
 					%>
 					${loginSession.zzjgDwmc}
 					<%
-						} else {
+					    } else {
 					%>
 					${loginSession.userName}
 					<%
-						}
+					    }
 					%>
 				</span>
 				&nbsp;&nbsp;
@@ -186,8 +186,7 @@ body {
 						姓名:
 						<input name="jtjlkName" type="text" class="inputText" id="jtjlkName" />
 						&nbsp; 毕业院校:
-						<input name="jtjlkByyx" type="text" class="inputText" id="jtjlkByyx" style="width:95px;"
-							placeholder="请输入学校全称" />
+						<input name="jtjlkByyx" type="text" class="inputText" id="jtjlkByyx" style="width:95px;" placeholder="请输入学校全称" />
 						&nbsp; 专业:
 						<input name="jtjlkZy" type="text" class="inputText" id="jtjlkZy" />
 						&nbsp; 学历: <select name="jtjlkXl" class="inputText" id="jtjlkXl">
@@ -220,13 +219,14 @@ body {
 							<option value="医护类">医护类</option>
 							<option value="教育培训类">教育培训类</option>
 							<option value="服务保障类">服务保障类</option>
-					</select>--%>&nbsp; 户口地:
+					</select>--%>
+						&nbsp; 户口地:
 						<input name="jtjlkHkd" type="text" class="inputText" id="jtjlkHkd" />
 						&nbsp;
-						<input  id="jtjlkIds" name="jtjlkIds" type="hidden"/>
+						<input id="jtjlkIds" name="jtjlkIds" type="hidden" />
 						<input name="button" type="button" onclick="loadData();" class="inputButton" value="查询" />
-						<input name="button" type="button" onclick="loadDataExp('录用');" class="inputButton"
-							value="批量导出" />
+						<!-- <input name="button" type="button" onclick="loadDataExp('录用');" class="inputButton"
+							value="批量导出" /> -->
 
 					</td>
 				</tr>
@@ -238,7 +238,7 @@ body {
 			<caption>集团简历库查询结果</caption>
 			<thead>
 				<tr>
-					<th width="30"><input id="checkAll" type="checkbox" /></th>
+					<!-- <th width="30"><input id="checkAll" type="checkbox" /></th> -->
 					<th width="3%">姓名</th>
 					<th width="5%">应聘岗位1</th>
 					<th width="5%">应聘岗位2</th>

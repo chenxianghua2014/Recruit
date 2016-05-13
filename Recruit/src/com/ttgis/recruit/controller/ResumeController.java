@@ -1185,10 +1185,13 @@ public class ResumeController
 			OutputStream o = response.getOutputStream();
 			File fileLoad = new File(strFilePath);
 			response.reset();
+			
 			response.setCharacterEncoding("gb2312");
-			response.setContentType("application/vnd.ms-excel");
-
+			//response.setCharacterEncoding("UTF-8");
+			//后缀excel改为word saveWord中修改了方法
+			response.setContentType("application/msword");
 			response.setHeader("Content-Disposition", "attachment;filename=" + new String(strFileName.getBytes("gbk"), "iso-8859-1")); // 转码之后下载的文件不会出现中文乱码
+			
 			long fileLength = fileLoad.length();
 			String length1 = String.valueOf(fileLength);
 			response.setHeader("Content_Length", length1);
@@ -1343,11 +1346,15 @@ public class ResumeController
 
 	public String saveWord(String resumeid, String userid, HttpServletRequest req) throws Exception
 	{
-		String url = PropertiesUtils.getValue("server");
-		String uri = "/Recruit/expjl?resumeId=" + resumeid + "&userid=" + userid;
+		String url = PropertiesUtils.getValue("server");   //url=http://localhost:8080
+		String uri = "/Recruit/expjl?resumeId=" + resumeid + "&userid=" + userid; 
+		//uri=/Recruit/expjl?resumeId=60030F27-A73C-5E2D-4DE5-A5BBF6537D7E&userid=60030F27-A73C-5E2D-4DE5-A5BBF6537D7E
 
 		// 要保存的word文件名称
-		String fn = getExFileName(resumeid, userid);
+		String fn = getExFileName(resumeid, userid);//提取学校，专业，姓名等信息组成文件名
+		
+		//path="D:\Tomcat 7.0\webapps\Recruit\\uppics/resumes/60030F27-A73C-5E2D-4DE5-A5BBF6537D7E/"
+		//文件实际存放路径
 		String path = request.getSession().getServletContext().getRealPath("/") + "uppics/resumes/" + resumeid + "/";
 
 		File file = new File(path);
@@ -1358,10 +1365,10 @@ public class ResumeController
 			file.mkdirs();
 
 		String htmlPath = HtmlSpider.saveHtmlTo(url + uri, path);
-		new HtmlToDoc().writeWordFile(htmlPath, path, fn + ".pdf", url + "/Recruit/");
+		new HtmlToDoc().writeWordFile(htmlPath, path, fn + ".doc", url + "/Recruit/");
 		File fileDel = new File(htmlPath);
 		fileDel.delete();
-		return path + "/" + fn + ".pdf";
+		return path + "/" + fn + ".doc";
 	}
 
 	/**

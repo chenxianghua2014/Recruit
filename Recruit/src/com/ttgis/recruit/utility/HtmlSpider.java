@@ -26,7 +26,7 @@ public class HtmlSpider
 	// 编码
 	private static final String ECODING = "UTF-8";
 
-	public static void main(String[] args)
+	public static void main(String[] args) throws IOException
 	{
 		// String filepath = "d:/11/";
 		// String url_str =
@@ -40,6 +40,10 @@ public class HtmlSpider
 		// List<String> imgSrc = getImageSrc(imgUrl);
 
 		// saveHtmlTo(url_str, filepath);
+	    String urlUri = "http://localhost:8080/Recruit/expjl?resumeId=60030F27-A73C-5E2D-4DE5-A5BBF6537D7E&userid=60030F27-A73C-5E2D-4DE5-A5BBF6537D7E";
+	    String path = "D:\\Tomcat 7.0\\webapps\\Recruit\\uppics/resumes/60030F27-A73C-5E2D-4DE5-A5BBF6537D7E/";
+	    String htmlPath = HtmlSpider.saveHtmlTo(urlUri, path);
+	    System.out.println(htmlPath);
 	}
 
 	/***

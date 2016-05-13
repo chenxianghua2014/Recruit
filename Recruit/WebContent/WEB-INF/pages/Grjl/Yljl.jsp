@@ -693,14 +693,14 @@
 					<td class="toolbar" style="width: 200px">
 						<c:choose>
 							<c:when test="${mv.model['JtjlkId'] eq null}">
-								<input type="button" onclick="newPDF()" class="inputButton" value="下载简历" />
+								<input type="button" onclick="newPDFHR()" class="inputButton" value="下载简历" />
 							</c:when>
 							<c:when test="${mv.model['JtjlkId'] eq 'jtjlk'}">
-								<input type="button" onclick="newPDF()" class="inputButton" value="下载简历" />
+								<input type="button" onclick="newPDFHR()" class="inputButton" value="下载简历" />
 							</c:when>
 							<c:otherwise>
 								<input type="hidden" id="jtjlkId" name="jtjlkId" value="${mv.model['JtjlkId']}" />
-								<input type="button" onclick="newPDF()" class="inputButton" value="下载简历" />
+								<input type="button" onclick="newPDFHR()" class="inputButton" value="下载简历" />
 							</c:otherwise>
 						</c:choose>
 					</td>
