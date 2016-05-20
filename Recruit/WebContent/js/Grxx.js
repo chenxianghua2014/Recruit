@@ -2597,7 +2597,7 @@ function adddiv3(jyjls) {
 							+ "</td>"
 							+ "</tr>"
 							
-							+ "<tr>"
+							/*+ "<tr>"
 							+ "<th style=\"width:112px;height: 29px;text-align:right\">"
 							+ "<span class=\"warning\">*</span>"
 							+ "专业"
@@ -2725,7 +2725,7 @@ function adddiv3(jyjls) {
 							+ "   name=\"resumeZy\"  onChange=\"javascript:qita(this.id);\"  data-rule=\"专业:required\";>"
 							+ "</select>"
 							+ "</td>"
-							+ "</tr>"
+							+ "</tr>"*/
 							
 							/*+ "<tr>"
 							+ "<th style=\"width:112px;height: 29px;text-align:right\">学历"
@@ -2750,6 +2750,20 @@ function adddiv3(jyjls) {
 							+ "</tr>"*/
 							
 							
+							
+							+ "<tr>"
+							+ "<th style=\"width:112px;height: 29px;text-align:right\">"
+							+ "<span class=\"warning\">*</span>"
+							+ "专业"
+							+ "</th>"
+							+ "<td colspan=\"3\">"
+							+ "<input  type=\"text\" name=\"resumeZyl\"  maxlength=\"50\"    data-rule=\"专业:required;\" "
+							+ "value =" 
+							+ (jyjls == undefined ? '' : jyjls.resumeZyl)   
+							+ ">"
+							/*+ "<span class=\"note\"><br>&nbsp;15门课程&nbsp;500字符以内</span>"*/
+							+ "</td>"
+							+ "</tr>"
 							
 							+ "<tr>"
 							+ "<th style=\"width:112px;height: 29px;text-align:right\">"
@@ -2818,8 +2832,8 @@ function adddiv3(jyjls) {
 	tdxx = tdxx + 1;
 	inputxx = inputxx + 1;
 	if (jyjls != undefined) {
-		$("#" + zylid).val(jyjls.resumeZyl);
-		bindZpzy(jyjls.resumeZyl, j);
+		//$("#" + zylid).val(jyjls.resumeZyl);
+		//bindZpzy(jyjls.resumeZyl, j);
 		$("#" + j).val(jyjls.resumeZy);
 		/*$("#" + idchange).val(jyjls.resumeXl);*/
 		$("#" + _xxmc).val(jyjls.resumeXxmc);
@@ -3574,10 +3588,10 @@ function adddiv8(gzjls) {
 							+ "<tr>"
 							+ "<th style=\"width:112px;height: 29px;text-align:right\">"
 							+ "<span class=\"warning\">*</span>"
-							+ "工作单位"
+							+ "工作单位及部门"
 							+ "</th>"
 							+ "<td>"
-							+ "<input type=\"text\" class=\"inputText\" id=\"resumeGzgs\" name=\"resumeGzgs\"  data-rule=\"工作单位:required;\" maxlength=\"50\" value="
+							+ "<input type=\"text\" class=\"inputText\" id=\"resumeGzgs\" name=\"resumeGzgs\"  data-rule=\"工作单位及部门:required;\" maxlength=\"50\" value="
 							+ (gzjls == undefined ? '' : gzjls.resumeGzgs)
 							+ ">"
 							
@@ -3634,7 +3648,7 @@ function adddiv8(gzjls) {
 							+ "</td>"
 							+ "</tr>"
 							
-							+ "<tr>"
+							/*+ "<tr>"
 							+ "<th style=\"width:112px;height: 29px;text-align:right\">"
 							+ "<span class=\"warning\">*</span>"
 							+ "职称（资格）"
@@ -3647,7 +3661,7 @@ function adddiv8(gzjls) {
 							+ "&nbsp;10字符以内"
 							+ "</span>"
 							+ "</td>"
-							+ "</tr>"
+							+ "</tr>"*/
 							
 							
 							
@@ -3682,10 +3696,10 @@ function adddiv8(gzjls) {
 							+ "工作描述"
 							+ "</th>"
 							+ "<td colspan=\"3\">"
-							+ "<textarea id=\"resumeGzms\" cols=\"58\" rows=\"4\" name=\"resumeGzms\" maxlength=\"500\" >"
+							+ "<textarea id=\"resumeGzms\" cols=\"58\" rows=\"4\" name=\"resumeGzms\" maxlength=\"150\" >"
 							+ (gzjls == undefined ? '' : gzjls.resumeGzms)
 							+ "</textarea>" + "<span class=\"note\">" + "<br/>"
-							+ "&nbsp;500字符以内" + "</span>" + "</td>" + "</tr>"
+							+ "&nbsp;150字符以内" + "</span>" + "</td>" + "</tr>"
 							+ "<tbody>" + "</table>" + "</form>" + "</div>"
 							+ "</div>");
 	g = g + 1;
@@ -3970,9 +3984,9 @@ function adddiv10(pxjls) {
 							+ "<input type=\"text\" class=\"inputText\" id=\"resumePxmc\" name=\"resumePxmc\"  data-rule=\"关系:required;\"   maxlength=\"10\" value="
 							+ (pxjls == undefined ? '' : pxjls.resumePxmc)
 							+ ">"
-							+ "<span class=\"note\">"
+							/*+ "<span class=\"note\">"
 							+ "&nbsp;10字符以内"
-							+ "</span>"
+							+ "</span>"*/
 							+ "</td>"
 							
 							+ "<td class=\"toolbar\">"
@@ -4011,9 +4025,9 @@ function adddiv10(pxjls) {
 							+ "<input type=\"text\" class=\"inputText\" id=\"resumePxjg\" name=\"resumePxjg\"    maxlength=\"10\" value="
 							+ (pxjls == undefined ? '' : pxjls.resumePxjg)
 							+ ">"
-							+ "<span class=\"note\">"
+							/*+ "<span class=\"note\">"
 							+ "&nbsp;10字符以内"
-							+ "</span>"
+							+ "</span>"*/
 							+ "</td>"
 							+ "</tr>"
 							
@@ -4038,9 +4052,9 @@ function adddiv10(pxjls) {
 							+ "<input type=\"text\" class=\"inputText\"  name=\"resumePxsj1\"    data-rule=\"政治面貌: required;  maxlength=\"10\" value="
 							+ (pxjls == undefined ? '' : pxjls.resumePxsj1)
 							+ ">"
-							+ "<span class=\"note\">"
+							/*+ "<span class=\"note\">"
 							+ "&nbsp;10字符以内"
-							+ "</span>"
+							+ "</span>"*/
 							+ "</td>"
 							+ "</tr>"
 							
@@ -4053,9 +4067,9 @@ function adddiv10(pxjls) {
 							+ "<input type=\"text\" class=\"inputText\"  name=\"resumePxnr\"    data-rule=\"工作单位及职务: required;  maxlength=\"10\" value="
 							+ (pxjls == undefined ? '' : pxjls.resumePxnr)
 							+ ">"
-							+ "<span class=\"note\">"
+							/*+ "<span class=\"note\">"
 							+ "&nbsp;10字符以内"
-							+ "</span>"
+							+ "</span>"*/
 							+ "</td>"
 							+ "</tr>"
 							

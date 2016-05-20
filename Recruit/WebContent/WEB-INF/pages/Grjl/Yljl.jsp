@@ -1,9 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
-	String path = request.getContextPath();
-	String basePath = request.getScheme() + "://"
-			+ request.getServerName() + ":" + request.getServerPort()
-			+ path + "/";
+    String path = request.getContextPath();
+			String basePath = request.getScheme() + "://"
+					+ request.getServerName() + ":" + request.getServerPort()
+					+ path + "/";
 %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
@@ -97,9 +97,7 @@
 					<tr>
 						<th>性别</th>
 						<td>${ mv.model['resume'].resumeSex }</td>
-						<td rowspan="4" style="width: 90px">
-							<img src="${ mv.model['resume'].resumePhotos }" width="90" height="100">
-						</td>
+						<td rowspan="4" style="width: 90px"><img src="${ mv.model['resume'].resumePhotos }" width="90" height="100"></td>
 					</tr>
 					<tr>
 						<th>民族</th>
@@ -202,7 +200,8 @@
 					</tr>
 					<tr>
 						<th>专业</th>
-						<td>${map.resumeZyl}&nbsp;&nbsp;${map.resumeZy}</td>
+<%-- 						<td>${map.resumeZyl}&nbsp;&nbsp;${map.resumeZy}</td> --%>
+						<td>${map.resumeZyl}</td>
 					</tr>
 					<tr>
 						<th>学历</th>
@@ -278,7 +277,7 @@
 			<c:forEach items="${ mv.model['Gzjl']}" var="map" varStatus="status">
 				<table>
 					<tr>
-						<th style="width: 155px; height: 27px">工作单位</th>
+						<th style="width: 155px; height: 27px">工作单位及部门</th>
 						<td>${map.resumeGzgs}</td>
 					</tr>
 					<tr>
@@ -289,10 +288,10 @@
 						<th>职务</th>
 						<td colspan="3">${map.resumeGzcs}</td>
 					</tr>
-					<tr>
+					<%-- <tr>
 						<th>职称（资格）</th>
 						<td colspan="3">${map.resumeGzbm}</td>
-					</tr>
+					</tr> --%>
 					<%--<tr>
 						<th>工作职位</th>
 						<td>${map.resumeGzzw}</td>
@@ -586,7 +585,7 @@
 			</table>
 		</div>
 		<table width="100%" border="1" class="admintable">
-			
+
 
 			<tr height="50px">
 				<td width="20%">奖惩情况</td>
@@ -690,20 +689,19 @@
 			<input type="hidden" id="resumeId" name="resumeId" value="${mv.model['resume'].resumeId}" />
 			<table style="width: 100%;text-align: center;">
 				<tr>
-					<td class="toolbar" style="width: 200px">
-						<c:choose>
+					<td class="toolbar" style="width: 200px"><c:choose>
 							<c:when test="${mv.model['JtjlkId'] eq null}">
 								<input type="button" onclick="newPDFHR()" class="inputButton" value="下载简历" />
 							</c:when>
 							<c:when test="${mv.model['JtjlkId'] eq 'jtjlk'}">
+								<input type="hidden" id="jtjlkId" name="jtjlkId" value="${mv.model['JtjlkId']}" />
 								<input type="button" onclick="newPDFHR()" class="inputButton" value="下载简历" />
 							</c:when>
 							<c:otherwise>
 								<input type="hidden" id="jtjlkId" name="jtjlkId" value="${mv.model['JtjlkId']}" />
 								<input type="button" onclick="newPDFHR()" class="inputButton" value="下载简历" />
 							</c:otherwise>
-						</c:choose>
-					</td>
+						</c:choose></td>
 				</tr>
 			</table>
 		</form>

@@ -954,7 +954,7 @@ body {
 					<tbody>
 						<tr>
 							<td colspan="2" class="subtitle">
-								<a href="javascript:show_div10()">隐藏/展开</a>家庭关系(如配偶、子女、父亲、母亲、岳父（公）、岳母（婆），并按照顺序添写)
+								<a href="javascript:show_div10()">隐藏/展开</a>家庭关系(含配偶、子女、父亲、母亲、岳父（公）、岳母（婆），并按照顺序添写，若无可不填写。)
 							</td>
 						</tr>
 					</tbody>

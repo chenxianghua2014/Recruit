@@ -202,12 +202,13 @@ body {
 							<option value="博士">博士</option>
 							<option value="其他">其他</option>
 						</select>
-						<%--&nbsp; 职位:<input name="jtjlkZw" type="text" class="inputText"
-						id="jtjlkZw" />&nbsp;职位类别:<select id="jtjlkGwlb" name="jtjlkGwlb">
+						<!-- &nbsp;<input name="jtjlkZw" type="text" class="inputText"
+						id="jtjlkZw" /> -->
+						&nbsp;应聘岗位:<select id="jtjlkGwlb" name="jtjlkGwlb">
 							<option value=""></option>
-							<option value="综合管理类">综合管理类</option>
-							<option value="科研管理类">科研管理类</option>
-							<option value="生产管理类">生产管理类</option>
+							<option value="职位1">职位1</option>
+							<option value="职位2">职位2</option> 
+							<!-- <option value="生产管理类">生产管理类</option>
 							<option value="经营管理类">经营管理类</option>
 							<option value="市场营销类">市场营销类</option>
 							<option value="其他管理类">其他管理类</option>
@@ -218,15 +219,18 @@ body {
 							<option value="技能类">技能类</option>
 							<option value="医护类">医护类</option>
 							<option value="教育培训类">教育培训类</option>
-							<option value="服务保障类">服务保障类</option>
-					</select>--%>
+							<option value="服务保障类">服务保障类</option> -->
+					 </select>
+						<!-- &nbsp; 应聘岗位:
+						<input name="jtjlkGwlb" type="text" class="inputText" id="jtjlkGwlb" /> -->
+						&nbsp;
 						&nbsp; 户口地:
 						<input name="jtjlkHkd" type="text" class="inputText" id="jtjlkHkd" />
 						&nbsp;
 						<input id="jtjlkIds" name="jtjlkIds" type="hidden" />
 						<input name="button" type="button" onclick="loadData();" class="inputButton" value="查询" />
-						<!-- <input name="button" type="button" onclick="loadDataExp('录用');" class="inputButton"
-							value="批量导出" /> -->
+						<input name="button" type="button" onclick="loadDataExp('录用');" class="inputButton"
+							value="批量导出" />
 
 					</td>
 				</tr>
@@ -238,12 +242,12 @@ body {
 			<caption>集团简历库查询结果</caption>
 			<thead>
 				<tr>
-					<!-- <th width="30"><input id="checkAll" type="checkbox" /></th> -->
+					<th width="30"><input id="checkAll" type="checkbox" /></th> 
 					<th width="3%">姓名</th>
 					<th width="5%">应聘岗位1</th>
 					<th width="5%">应聘岗位2</th>
 					<th width="3%">性别</th>
-					<th width="8%">工作单位</th>
+					<th width="8%">工作单位及部门</th>
 					<th width="5%">职务</th>
 					<th width="8%">出生年月</th>
 					<th width="5%">参加工作时间</th>

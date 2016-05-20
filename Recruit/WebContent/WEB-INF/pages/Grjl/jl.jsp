@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="application/msword; charset=utf-8" pageEncoding="utf-8"%>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -124,7 +124,7 @@ table.admintableSp td.tleft{
 			<td align="center">${ mv.model['Jyjl'][0].resumeXl }</td>
 
 			<td align="center" rowspan="2">职称/资格</td>
-			<td align="center" rowspan="2" colspan="1">${ mv.model['Gzjl'][0].resumeGzbm }</td>
+			<td align="center" rowspan="2" colspan="1">${ mv.model['resume'].resumeZczg }</td>
 		</tr>
 		<tr>
 			<td align="center">学位</td>
@@ -150,10 +150,12 @@ table.admintableSp td.tleft{
 			<td align="center" colspan="3">${ mv.model['Jyjl'][0].resumeXxmc }</td>
 			<td align="center">专业</td>
 			<td colspan="3" align="center">
-				${mv.model['Jyjl'][0].resumeZyl}-${mv.model['Jyjl'][0].resumeZy}</td>
+				<%-- ${mv.model['Jyjl'][0].resumeZyl}-${mv.model['Jyjl'][0].resumeZy} --%>
+				${mv.model['Jyjl'][0].resumeZyl}}
+				</td>
 		</tr>
 		<tr>
-			<td align="center">工作单位</td>
+			<td align="center">工作单位及部门</td>
 			<td align="center" colspan="3">${ mv.model['Gzjl'][0].resumeGzgs }</td>
 			<td align="center">职务</td>
 			<td colspan="3" align="center">${ mv.model['Gzjl'][0].resumeGzcs }</td>
@@ -186,7 +188,8 @@ table.admintableSp td.tleft{
 			<c:set var="string4" value="${fn:replace(string3,'-', '.')}" />
 			<td align="center">${string2}-${string4}</td>
 			<td align="center">${mv.model['Jyjl'][0].resumeXxmc}</td>
-			<td align="center">${mv.model['Jyjl'][0].resumeZyl}-${mv.model['Jyjl'][0].resumeZy}</td>
+<%-- 			<td align="center">${mv.model['Jyjl'][0].resumeZyl}-${mv.model['Jyjl'][0].resumeZy}</td> --%>
+			<td align="center">${mv.model['Jyjl'][0].resumeZyl}</td>
 			<td align="center">${mv.model['Jyjl'][0].resumeXl}</td>
 		</tr>
 		<c:forEach items="${ mv.model['Jyjl']}" begin="1" var="map" varStatus="status">
@@ -197,7 +200,8 @@ table.admintableSp td.tleft{
 				<c:set var="string4" value="${fn:replace(string3,'-', '.')}" />
 				<td align="center">${string2}-${string4}</td>
 				<td align="center">${map.resumeXxmc}</td>
-				<td align="center">${map.resumeZyl}-${map.resumeZy}</td>
+				<%-- <td align="center">${map.resumeZyl}-${map.resumeZy}</td> --%>
+				<td align="center">${map.resumeZyl}</td>
 				<td align="center">${map.resumeXl}</td>
 			</tr>
 		</c:forEach>

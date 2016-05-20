@@ -40,7 +40,7 @@ function pageselectCallback(page_index) {
 					var ids = $("#jtjlkIds").val().split("/");
 					for (var i = 0; i <= jtjlks.length - 1; i++) {
 						strHtml += "<tr>";
-						/*var j = 0;
+						var j = 0;
 						for (j; j < ids.length; j++) {
 							if (jtjlks[i].jtjlkId == ids[j]) {
 								strHtml += "<td><input name='subBox' type='checkbox' checked='checked' onclick='editJtjlkId(this)' value='"
@@ -52,7 +52,7 @@ function pageselectCallback(page_index) {
 						if (j == ids.length) {
 							strHtml += "<td><input name='subBox' type='checkbox'  onclick='editJtjlkId(this)' value='"
 									+ jtjlks[i].jtjlkId + "'/></td>";
-						}*/
+						}
 
 						strHtml += "<td>" + jtjlks[i].jtjlkName + "</td>"; /* 姓名 */
 						strHtml += "<td>" + jtjlks[i].jtjlkGwlb + "</td>"; /* 应聘岗位1 */

@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 import com.ttgis.recruit.Mapper.ResumeMapper;
 import com.ttgis.recruit.domain.Resume;
 
-;
 
 @Repository
 @Service

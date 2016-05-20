@@ -82,6 +82,7 @@
 		WHERE RESUME_JYJLID
 		=#{resume_Jyjlid,jdbcType=VARCHAR}
 	</select>
+	<!-- 默认升序排列 -->
 	<select id="getlistResumeJyjlByResumeId" resultMap="BaseResultMap"
 		parameterType="java.lang.String">
 		SELECT *
